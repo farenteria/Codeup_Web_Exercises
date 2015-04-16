@@ -1,0 +1,57 @@
+h1, h2{
+	text-decoration: underline;
+}
+
+body{
+	background-image: url("/img/upfeathers.png");
+	background-color: #FBFAF8;
+	font-family: "Noto Serif", serif;
+	margin: 5px;
+}
+
+strong{
+	font-weight: 700;
+}
+
+em{
+	font-weight: 400;
+}
+
+.ulist{
+	list-style-type: square;
+}
+
+.olist{
+	list-style-type: upper-roman;
+}
+
+table{
+	border-collapse: collapse;
+}
+
+table, th, td{
+	border: 1px solid black;
+}
+
+a:link{
+	color: #336600;
+}
+
+a:visited{
+	color: #9900CC;
+}
+
+a:hover{
+	color: #003300;
+}
+
+#car{
+	width: 50%;
+	height: 50%;
+}
+
+div{
+	float: right;
+	margin: 0 0 15px 20px;
+	text-align: center;
+}

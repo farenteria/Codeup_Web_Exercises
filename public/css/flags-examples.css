@@ -1,0 +1,70 @@
+/**
+* Global.............global styling shared throughout document
+* US.................styling belonging only to US flag
+* Japanese...........styling belonging only to Japanese flag
+* Union..............styling belonging only to Union Jack
+*/
+
+html{
+	box-sizing: border-box;
+}
+*, *:before, *:after{
+	box-sizing: inherit;
+}
+body{
+	background-color: pink;
+}
+.flag{
+	margin: 10px;
+}
+.blue{
+	background-color: #00247D;
+}
+.white{
+	background-color: #FFFFFF;
+}
+.red{
+	background-color: #CF142B;
+}
+/* doesn't apply to US flag */
+.flag-box{
+	height: 260px;
+	width: 400px;
+}
+
+/* US flag stuff */
+#blue-box{
+	height: 100px;
+	width: 150px;
+	float: left;
+}
+.us-line{
+	height: 20px;
+	width: 400px;
+}
+
+/* Japanese flag stuff */
+#circle{
+	border-radius: 50%;
+	width: 100px;
+	height: 100px;
+	position: absolute; /* circle will be moved by us*/
+	top: 350px;
+	left: 170px;
+}
+
+/* Union jack stuffs */
+#jack-position{
+	position: relative;
+}
+#vertical-line-w{
+	width: 80px;
+	height: 260px;
+	margin: 0 auto;
+}
+#horizontal-line-w{
+	width: 400px;
+	height: 80px;
+	position: absolute;
+	top: 90px;
+}

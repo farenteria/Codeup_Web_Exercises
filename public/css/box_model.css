@@ -1,0 +1,55 @@
+/**
+* CONTENTS
+* GLOBAL........box-sizing, h1, p, and div
+* BOXES.........By order they are shown on page
+*/
+html{
+	box-sizing: border-box;
+}
+*, *:before, *:after{
+	box-sizing: inherit;
+}
+
+/* header */
+h1{
+	text-decoration: underline;
+}
+/* text in each box */
+p{
+	font-weight: bold;
+	color: #FFFFFF;
+	position:relative; /* allows us to use bottom tag */
+	bottom: 10px;
+}
+/* creates the boxes */
+div{
+	border: 1px solid black;
+	width: 172px;
+	height: 72px;
+	padding: 11px;
+}
+
+/* adds color and margins for each box. Each box will move slightly more to the right, as a staircase */
+.red{
+	background: #D84231;
+}
+.orange{
+	background: #EAAE33;
+	margin: 10px 0px 10px 30px;
+}
+.yellow{
+	background: #FDF733;
+	margin: 10px 0px 10px 60px;
+}
+.green{
+	background: #578C05;
+	margin: 10px 0px 10px 90px;
+}
+.blue{
+	background: #234AFB;
+	margin: 10px 0px 10px 120px;
+}
+.pink{
+	background: #DF8BF0;
+	margin: 10px 0px 10px 150px;
+}
