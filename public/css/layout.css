@@ -1,0 +1,45 @@
+body{
+	background-color: #e1e1e1;
+	position: relative;
+}
+
+#top-nav{
+	margin: 0 auto;
+	position: fixed;
+}
+
+#top-nav ul{
+	
+	top: 0;
+}
+
+#top-nav ul li{
+	display: inline;
+}
+
+#left-nav{
+	float: left;
+	height: 100%;
+	width: 30%;
+}
+
+main{
+	float: right;
+	width: 70%;
+}
+
+aside{
+	background-color: #FFFFFF;
+	padding: 20px;
+	margin: 20px;
+}
+
+#death-star{
+	width: 30%;
+	height: auto;
+	float: left;
+}
+
+footer{
+	clear: left;
+}
