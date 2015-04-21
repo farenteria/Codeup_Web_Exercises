@@ -37,6 +37,7 @@ h1{
 	background-color: #FFFFFF;
 	padding: 20px;
 	height: 390px;
+	border-radius: 25px;
 }
 
 /* keeps the main text to the right of the left sidebar*/
@@ -49,6 +50,7 @@ main{
 	width: 30%;
 	height: auto;
 	float: left;
+	border-radius: 25px;
 }
 
 footer{
