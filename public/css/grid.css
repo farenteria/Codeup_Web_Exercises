@@ -56,3 +56,20 @@ html{
 .column.three-sixth{
 	width: 50%;
 }
+
+/* these following classes will offset columns to the right*/
+.offset-one-fourth{
+	margin-left: 25%;
+}
+
+.offset-one-half{
+	margin-left: 50%;
+}
+
+.offset-one-third{
+	margin-left: 33.333333333%;
+}
+
+.offset-two-third{
+	margin-left: 66.666666666%;
+}
