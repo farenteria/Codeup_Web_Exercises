@@ -28,14 +28,7 @@ h1{
 	width: 30%;
 	background-color: #FFFFFF;
 	padding: 20px;
-	height: 390px;
 	border-radius: 25px;
-}
-
-/* keeps the main text to the right of the left sidebar*/
-main{
-	float: right;
-	width: 70%;
 }
 
 #death-star{
