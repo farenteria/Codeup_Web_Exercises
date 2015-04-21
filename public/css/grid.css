@@ -31,6 +31,10 @@ html{
 	width: 12.5%;
 }
 
+.column.three-eighth{
+	width: 37.5%;
+}
+
 .column.one-sixth{
 	width: 16.66666666666666%;
 }
@@ -40,9 +44,15 @@ html{
 }
 
 .column.one-third{
-	width: 33.33%;
+	width: 33.333333333%;
 }
 
-.column.one-half{
+.column.two-third{
+	width: 66.6666666666%;
+}
+
+.column.one-half,
+.column.two-fourth,
+.column.three-sixth{
 	width: 50%;
 }
