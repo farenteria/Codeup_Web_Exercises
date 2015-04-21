@@ -16,14 +16,6 @@ body{
 	display: inline;
 	padding: 5px;
 }
- 
-/* fixed at the top right */
-#top-nav{
-	margin: 0 auto;
-	position: fixed;
-	right: 50px;
-	top: 0;
-}
 
 h1{
 	width: 395px;
