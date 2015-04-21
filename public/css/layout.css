@@ -14,6 +14,7 @@ body{
 
 .inline-item{
 	display: inline;
+	padding: 5px;
 }
 
 #top-nav{
@@ -27,6 +28,7 @@ body{
 }
 
 h1{
+	width: 395px;
 	margin: 0 auto;
 }
 
@@ -35,9 +37,10 @@ h1{
 	width: 30%;
 	background-color: #FFFFFF;
 	padding: 20px;
-	height: 500px;
+	height: 390px;
 }
 
+/* keeps the main text to the right of the left sidebar*/
 main{
 	float: right;
 	width: 70%;
@@ -50,10 +53,7 @@ main{
 }
 
 footer{
-	clear: both;
-}
-
-footer ul{
-	position: absolute;
-	left: 300px;
+	clear: right;
+	font-size: 60%;
+	text-align: center;
 }
