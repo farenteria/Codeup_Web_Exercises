@@ -1,11 +1,11 @@
-var guess = 0;
 // Set the upper limit of the collection of numbers one can guess
 var maxNumber = 20;
 var playAgain = true;
-var answer = 0;
-//document.getElementById("button").onClick = playGame();
-//butt.onClick = playGame();
+var answer;
+var guess;
 
+/* has its own function so it doesn't pop up automatically
+ when page is (re)loaded */
 function playGame(){
 	while(playAgain){
 		//answer will be random for every new game
