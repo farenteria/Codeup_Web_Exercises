@@ -5,6 +5,20 @@
 <body>
 	<script>
 		var myNameIs = "Fernando";
+
+		function sayHello(name){
+			console.log(name + " says, \"Whassup, homie?\" ");
+		}
+
+		sayHello(myNameIs);
+
+		var random = Math.floor((Math.random() * 100) + 1);
+
+		function isOdd(number){
+			(number % 2 != 0) ? console.log(random + " is odd") : console.log(random + " is even");
+		}
+
+		isOdd(random);
 	</script>
 </body>
 </html>
