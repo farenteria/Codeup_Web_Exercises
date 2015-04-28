@@ -4,6 +4,23 @@
 </head>
 <body>
 	<script>
+		"use strict";
+
+		(function(){
+			var myNameIs = "Fernando";
+			var random = Math.floor((Math.random() * 100) + 1);
+
+			function sayHello(name){
+				console.log(name + " says, \"Whassup, homie?\"");
+			}
+
+			function isOdd(number){
+				(number % 2 != 0) ? console.log(random + " is odd") : console.log(random + " is even");
+			}
+
+			sayHello(myNameIs);
+			isOdd(random);
+		})();
 	</script>
 </body>
 </html>
