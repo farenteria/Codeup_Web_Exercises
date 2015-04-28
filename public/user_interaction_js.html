@@ -1,0 +1,28 @@
+<html>
+<head>
+	<title>User Interaction</title>
+</head>
+<body>
+	<script>
+		"use strict";
+
+		var name;
+		var likePizza;
+
+		//will keep repeating until we get a name
+		do{
+			name = prompt("What is your name?");
+		}while(name.length < 1)
+
+		alert("Welcome to your customized alert, " + name + ". We hope you enjoy your stay...and never leave");
+
+		likePizza = confirm("Do you enjoy pizza?");
+
+		if(likePizza){
+			alert("Congratulations. You get a creative alert message.");
+		} else{
+			alert("You're dead to me.");
+		}
+	</script>
+</body>
+</html>
