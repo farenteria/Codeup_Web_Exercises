@@ -1,8 +1,11 @@
 // Set the upper limit of the collection of numbers one can guess
 var maxNumber = 20;
 var playAgain = true;
+var cancel = false;
 var answer;
 var guess;
+
+playGame();
 
 /* has its own function so it doesn't pop up automatically
  when page is (re)loaded */
@@ -20,7 +23,7 @@ function playGame(){
 		while(guess != answer){
 			hitCancel();
 
-			if(guess > answer){
+			if(guess > answer && !cancel){
 				guess = prompt("Too high! Try something lower.");
 			} else{
 				guess  = prompt("You're lowballing me, bro. Guess a bit higher.");
@@ -44,5 +47,6 @@ function hitCancel(){
 		alert("Okay! See you later!");
 		playAgain = false;
 		guess = answer;
+		cancel = true;
 	}
 }
