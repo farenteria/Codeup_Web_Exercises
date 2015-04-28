@@ -6,6 +6,7 @@
 	<script>
 		"use strict";
 
+		//loop solution
 		/*for( var i = 1; i <= 100; i++){
 			if(i % 3 == 0 && i % 5 == 0){
 				console.log("FizzBuzz");
@@ -18,7 +19,13 @@
 			}
 		}*/
 
-		function recursiveFizzBuzz(number){
+		//calls recursive version with fixed max number
+		function fizzBuzz(number){
+			recursiveFizzBuzz(1, number);
+		}
+
+		//RECURSION FOR THE FIZZ
+		function recursiveFizzBuzz(number, originalNum){
 			if(number % 3 == 0 && number % 5 == 0){
 				console.log("FizzBuzz");
 			} else if(number % 3 == 0){
@@ -29,12 +36,12 @@
 				console.log(number);		
 			}
 
-			if(number > 0){
-				recursiveFizzBuzz(number - 1);
+			if(number < originalNum){
+				recursiveFizzBuzz(number + 1, originalNum);
 			}
 		}
 
-		recursiveFizzBuzz(100);
+		fizzBuzz(100);
 	</script>
 </body>
 </html>
