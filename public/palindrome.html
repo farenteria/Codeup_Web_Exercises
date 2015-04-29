@@ -1,0 +1,48 @@
+<html>
+<head>
+	<title>Palindrome</title>
+</head>
+<body>
+	<script>
+		(function(){
+			"use strict";
+
+			function splitToArray(word){
+				var newArray = [];
+				for(var i = 0; i < word.length; i++){
+					newArray.push(word[i]);
+				}
+
+				return newArray;
+			}
+
+			var word = prompt("Type in a palindrome");
+			var wordArray = splitToArray(word);
+			console.log(wordArray);
+			var wordArrayBack = wordArray.reverse();
+			console.log(wordArrayBack);
+			var match = true;
+
+			// for(var i = 0; i < wordArray.length; i++){
+			// 	if(wordArray[i] != wordArrayBack[i]){
+			// 		console.log(wordArray[i] + " " + wordArrayBack[i]);
+			// 		match = false;
+			// 		break;
+			// 	}
+			// }
+
+			wordArray.forEach(function(element, index, array){
+				if(wordArray[index] !== wordArrayBack[index]){
+					match = false;
+				}
+			})
+
+			if(match){
+				alert("Palindrome!! Whoo!! PARTY#SWAGYOLO420");
+			} else{
+				alert("No pal for you, bud.");
+			}
+		})();
+	</script>
+</body>
+</html>
