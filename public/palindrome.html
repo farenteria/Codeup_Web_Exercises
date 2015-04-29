@@ -18,24 +18,14 @@
 
 			var word = prompt("Type in a palindrome");
 			var wordArray = splitToArray(word);
-			console.log(wordArray);
-			var wordArrayBack = wordArray.reverse();
-			console.log(wordArrayBack);
 			var match = true;
 
-			// for(var i = 0; i < wordArray.length; i++){
-			// 	if(wordArray[i] != wordArrayBack[i]){
-			// 		console.log(wordArray[i] + " " + wordArrayBack[i]);
-			// 		match = false;
-			// 		break;
-			// 	}
-			// }
-
-			wordArray.forEach(function(element, index, array){
-				if(wordArray[index] !== wordArrayBack[index]){
+			for(var i = 0, j = wordArray.length - 1; i < wordArray.length; i++, j--){
+				if(wordArray[i] != wordArray[j]){
 					match = false;
+					break;
 				}
-			})
+			}
 
 			if(match){
 				alert("Palindrome!! Whoo!! PARTY#SWAGYOLO420");
