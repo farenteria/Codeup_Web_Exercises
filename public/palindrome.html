@@ -7,17 +7,8 @@
 		(function(){
 			"use strict";
 
-			function splitToArray(word){
-				var newArray = [];
-				for(var i = 0; i < word.length; i++){
-					newArray.push(word[i]);
-				}
-
-				return newArray;
-			}
-
 			var word = prompt("Type in a palindrome");
-			var wordArray = splitToArray(word);
+			var wordArray = word.split("");
 			var match = true;
 
 			for(var i = 0, j = wordArray.length - 1; i < wordArray.length; i++, j--){
