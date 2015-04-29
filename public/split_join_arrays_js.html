@@ -3,6 +3,17 @@
 	<title>Split and Join</title>
 </head>
 <body>
+	<script>
+		(function(){
+			"use strict";
 
+			var planets = ["Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune"];
+			var planetsAsString = planets.join("|");
+			var planetsAsArray = planetsAsString.split("|");
+
+			console.log(planetsAsString);
+			console.log(planetsAsArray);
+		})();
+	</script>
 </body>
 </html>
