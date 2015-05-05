@@ -17,6 +17,7 @@
         var detonationTimer = 5;
         var timerInterval = setInterval(updateTimer, 1000);
         var mustDefuse = true; //for button change
+        var button = document.getElementById("defuser");
 
         // TODO: This function needs to be called once every second
         function updateTimer()
@@ -36,19 +37,26 @@
         function defuseTheBOM()
         {
             clearInterval(timerInterval);
-            document.getElementById("defuser").innerHTML = "Start timer again";
+            button.innerHTML = "Start timer again";
             alert("MY HERO!!!");
         }
 
         function buttClick(){
-            if(mustDefuse){
+            //random number between 0-1000. once i figure out how to get window size, this will change
+            var random = Math.floor(Math.random() * 1000) + "px";
+
+            if(mustDefuse){ //countdown goes inactive if button is clicked while countdown is active
                 defuseTheBOM();
                 mustDefuse = false;
-            } else{
+            } else{ //countdown goes active if button is clicked while countdown is inactive
+                button.innerHTML = "Defuse the BOM";
                 timerInterval = setInterval(updateTimer, 1000);
-                document.getElementById("defuser").innerHTML = "Defuse the BOM";
                 mustDefuse = true;
             }
+
+            //moves button in random position (according to random constraints)
+           button.style["top"] = random;
+           button.style["left"] = random;
         }
 
         // Don't modify anything below this line!
