@@ -11,6 +11,7 @@
     <script>
         var detonationTimer = 5;
         var timerInterval = setInterval(updateTimer, 1000);
+        var mustDefuse = true; //for button change
 
         // TODO: This function needs to be called once every second
         function updateTimer()
@@ -31,6 +32,17 @@
         {
             clearInterval(timerInterval);
             alert("MY HERO!!!");
+            document.getElementById("defuser").firstChild.data = "Start timer again";
+        }
+
+        function buttClick(){
+            if(mustDefuse){
+                defuseTheBOM();
+                mustDefuse = false;
+            } else{
+                timerInterval = setInterval(updateTimer, 1000);
+                mustDefuse = true;
+            }
         }
 
         // Don't modify anything below this line!
@@ -39,7 +51,7 @@
         // when the "defuser" button is clicked.
         // We will learn about events in the DOM lessons
         var defuser = document.getElementById('defuser');
-        defuser.addEventListener('click', defuseTheBOM, false);
+        defuser.addEventListener('click', buttClick, false);
     </script>
 </body>
 </html>
