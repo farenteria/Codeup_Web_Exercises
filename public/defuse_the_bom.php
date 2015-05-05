@@ -2,6 +2,11 @@
 <html>
 <head>
     <title>Defuse the BOM</title>
+    <style>
+        #defuser{
+            position: absolute;
+        }
+    </style>
 </head>
 <body>
     <h2 id="message">This BOM will self destruct in <span id="timer">5</span> seconds...</h2>
@@ -31,8 +36,8 @@
         function defuseTheBOM()
         {
             clearInterval(timerInterval);
-            alert("MY HERO!!!");
             document.getElementById("defuser").innerHTML = "Start timer again";
+            alert("MY HERO!!!");
         }
 
         function buttClick(){
@@ -41,6 +46,7 @@
                 mustDefuse = false;
             } else{
                 timerInterval = setInterval(updateTimer, 1000);
+                document.getElementById("defuser").innerHTML = "Defuse the BOM";
                 mustDefuse = true;
             }
         }
