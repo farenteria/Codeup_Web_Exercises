@@ -42,8 +42,10 @@
         }
 
         function buttClick(){
-            //random number between 0-1000. once i figure out how to get window size, this will change
-            var random = Math.floor(Math.random() * 1000) + "px";
+            //random number between 0 and size of window (inclusive)
+            var randomHeight = Math.floor(Math.random() * window.innerHeight) + "px";
+            var randomWidth = Math.floor(Math.random() * window.innerWidth) + "px";
+            console.log(randomHeight + " " + randomWidth);
 
             if(mustDefuse){ //countdown goes inactive if button is clicked while countdown is active
                 defuseTheBOM();
@@ -55,8 +57,8 @@
             }
 
             //moves button in random position (according to random constraints)
-           button.style["top"] = random;
-           button.style["left"] = random;
+           button.style["top"] = randomHeight;
+           button.style["left"] = randomWidth;
         }
 
         // Don't modify anything below this line!
