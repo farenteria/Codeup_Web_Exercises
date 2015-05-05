@@ -32,7 +32,7 @@
         {
             clearInterval(timerInterval);
             alert("MY HERO!!!");
-            document.getElementById("defuser").firstChild.data = "Start timer again";
+            document.getElementById("defuser").innerHTML = "Start timer again";
         }
 
         function buttClick(){
