@@ -18,14 +18,14 @@
         var timerInterval = setInterval(updateTimer, 1000);
         var mustDefuse = true; //for button change
         var button = document.getElementById("defuser");
+        var body = document.body;
 
         // TODO: This function needs to be called once every second
         function updateTimer()
         {
             if (detonationTimer == 0) {
                 alert('EXTERMINATE!');
-                document.body.innerHTML = 'BOOM';
-                document.body.style["background-color"] = "red";
+                changeBodyOnExplode();
             } else if (detonationTimer > 0) {
                 document.getElementById('timer').innerHTML = detonationTimer;
             }
@@ -60,6 +60,26 @@
             //moves button in random position (according to random constraints)
            button.style["top"] = randomHeight;
            button.style["left"] = randomWidth;
+        }
+
+        function changeBodyOnExplode(){
+            body.style["background-color"] = "red";
+            body.innerHTML = "";
+            //creates new paragraph with text, and adds it to body
+            var paragraph = document.createElement("P");
+            var paragraphText = document.createTextNode("BOOM");
+            paragraph.appendChild(paragraphText);
+            body.appendChild(paragraph);
+
+            paragraph.style["position"] = "absolute";
+            paragraph.style["font-size"] = "500%";
+
+            setInterval(function (){
+                var randomHeight = Math.floor(Math.random() * window.innerHeight) + "px";
+                var randomWidth = Math.floor(Math.random() * window.innerWidth) + "px";
+                paragraph.style["top"] = randomHeight;
+                paragraph.style["left"] = randomWidth;
+            }, 1000);
         }
 
         // Don't modify anything below this line!
