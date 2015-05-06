@@ -69,6 +69,7 @@
 
             paragraph.style["position"] = "absolute";
             paragraph.style["font-size"] = "100px";
+    
 
             setInterval(function (){
                 var randomHeight;
@@ -76,12 +77,18 @@
 
                 //helps to keep text mostly visible. if there's a better way, i'll change it
                 do{
-                    randomHeight = Math.round(Math.random() * window.innerHeight - 250);
-                    randomWidth = Math.round(Math.random() * window.innerWidth - 250);
+                    randomHeight = Math.round(Math.random() * window.innerHeight - paragraph.clientHeight);
+                    randomWidth = Math.round(Math.random() * window.innerWidth - paragraph.clientWidth);
                 } while(randomHeight < 0 || randomWidth < 0);
 
                 randomHeight = randomHeight + "px";
                 randomWidth = randomWidth + "px";
+
+                console.log("random: " + randomHeight + " " + randomWidth);
+                console.log("actual: " + window.innerHeight + "px " + window.innerWidth + " px");
+                console.log(paragraph.clientHeight);
+                console.log(paragraph.clientWidth);
+                console.log("");
 
                 paragraph.style["top"] = randomHeight;
                 paragraph.style["left"] = randomWidth;
