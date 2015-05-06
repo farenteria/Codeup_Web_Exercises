@@ -24,7 +24,8 @@
         {
             if (detonationTimer == 0) {
                 alert('EXTERMINATE!');
-                document.body.innerHTML = '';
+                document.body.innerHTML = 'BOOM';
+                document.body.style["background-color"] = "red";
             } else if (detonationTimer > 0) {
                 document.getElementById('timer').innerHTML = detonationTimer;
             }
