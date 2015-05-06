@@ -21,10 +21,10 @@
         var body = document.body;
 
         // TODO: This function needs to be called once every second
-        function updateTimer()
-        {
+        function updateTimer(){
             if (detonationTimer == 0) {
                 alert('EXTERMINATE!');
+                clearInterval(timerInterval); //no need for this one to keep running
                 changeBodyOnExplode();
             } else if (detonationTimer > 0) {
                 document.getElementById('timer').innerHTML = detonationTimer;
@@ -35,18 +35,13 @@
 
         // TODO: When this function runs, it needs to
         // cancel the interval/timeout for updateTimer()
-        function defuseTheBOM()
-        {
+        function defuseTheBOM(){
             clearInterval(timerInterval);
             button.innerHTML = "Start timer again";
             alert("MY HERO!!!");
         }
 
         function buttClick(){
-            //random number between 0 and size of window (inclusive)
-            var randomHeight = Math.floor(Math.random() * window.innerHeight) + "px";
-            var randomWidth = Math.floor(Math.random() * window.innerWidth) + "px";
-            console.log(randomHeight + " " + randomWidth);
 
             if(mustDefuse){ //countdown goes inactive if button is clicked while countdown is active
                 defuseTheBOM();
@@ -57,14 +52,15 @@
                 mustDefuse = true;
             }
 
-            //moves button in random position (according to random constraints)
-           button.style["top"] = randomHeight;
-           button.style["left"] = randomWidth;
+            //moves button in random position (according to window size constraints)
+           button.style["top"] = Math.floor(Math.random() * window.innerHeight) + "px";
+           button.style["left"] = Math.floor(Math.random() * window.innerWidth) + "px";
         }
 
         function changeBodyOnExplode(){
             body.style["background-color"] = "red";
             body.innerHTML = "";
+
             //creates new paragraph with text, and adds it to body
             var paragraph = document.createElement("P");
             var paragraphText = document.createTextNode("BOOM");
@@ -75,8 +71,8 @@
             paragraph.style["font-size"] = "500%";
 
             setInterval(function (){
-                var randomHeight = Math.floor(Math.random() * window.innerHeight) + "px";
-                var randomWidth = Math.floor(Math.random() * window.innerWidth) + "px";
+                var randomHeight = Math.floor(Math.random() * window.innerHeight - 100) + "px";
+                var randomWidth = Math.floor(Math.random() * window.innerWidth - 100) + "px";
                 paragraph.style["top"] = randomHeight;
                 paragraph.style["left"] = randomWidth;
             }, 1000);
