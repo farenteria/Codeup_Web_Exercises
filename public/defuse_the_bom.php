@@ -68,11 +68,21 @@
             body.appendChild(paragraph);
 
             paragraph.style["position"] = "absolute";
-            paragraph.style["font-size"] = "500%";
+            paragraph.style["font-size"] = "100px";
 
             setInterval(function (){
-                var randomHeight = Math.floor(Math.random() * window.innerHeight - 100) + "px";
-                var randomWidth = Math.floor(Math.random() * window.innerWidth - 100) + "px";
+                var randomHeight;
+                var randomWidth;
+
+                //helps to keep text mostly visible. if there's a better way, i'll change it
+                do{
+                    randomHeight = Math.round(Math.random() * window.innerHeight - 250);
+                    randomWidth = Math.round(Math.random() * window.innerWidth - 250);
+                } while(randomHeight < 0 || randomWidth < 0);
+
+                randomHeight = randomHeight + "px";
+                randomWidth = randomWidth + "px";
+
                 paragraph.style["top"] = randomHeight;
                 paragraph.style["left"] = randomWidth;
             }, 1000);
