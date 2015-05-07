@@ -24,39 +24,57 @@
 	        culpa qui officia deserunt mollit anim id est laborum.
 	    </p>
 
+	    <button id="button1">Change Heading</button>
+	    <button id="button2">Change Sub Heading</button>
+	    <button id="button3">Single Shade of Grey (and Blue)</button>
+	    <button id="button4">Accomplish!!! EVERYTHING!</button>
+
 	    <script>
 	    	(function(){
+	    		var headingButton = document.getElementById("button1");
+	    		var subHeadButton = document.getElementById("button2");
+	    		var greyButton = document.getElementById("button3");
+	    		var accomplishedButton = document.getElementById("button4");
+
 		        // todo: get the main header element by id
 		        var mainHeader = document.getElementById("main-header");
 
 		        // todo: set inner html of mainHeader to "JavaScript is Cool"
-		        mainHeader.innerHTML = "JavaScript is Cool";
+		        headingButton.addEventListener("click", function(){
+		            mainHeader.innerHTML = "JavaScript is Cool";	
+		        });
 
 		        // todo: get the sub header element by id
 		        var subHeader = document.getElementById("sub-header");
 
 		        // todo: set the text color of subHeader to blue
-		        subHeader.style["color"] = "blue";
-
+		        subHeadButton.addEventListener("click", function(){
+		        	subHeader.style["color"] = "blue";
+		        });
+		      
 		        // todo: get all list items
 		        var listItems = document.getElementsByTagName("li");
 
 		        // todo: set text color on every other list item to grey
 		        // todo: set text color of li with dbid = 1 to blue
-		        for(var i = 0; i < listItems.length; i = i + 2){
-		        	listItems[i].style["color"] = "grey";
+		        greyButton.addEventListener("click", function(){
+		        	for(var i = 0; i < listItems.length; i = i + 2){
+		        		listItems[i].style["color"] = "grey";
 
-		        	//this will only run the first time. this is acceptable. I'll fight you for it
-		        	if(listItems[i].attributes["data-dbid"].value == "1"){
-		        		listItems[i].style["color"] = "blue";
-		        	}
-		        }
+			        	//this will only run the first time. this is acceptable. I'll fight you for it
+			        	if(listItems[i].attributes["data-dbid"].value == "1"){
+			        		listItems[i].style["color"] = "blue";
+			        	}
+			        }
+		        });
 
 		        // todo: get all elements with class name sub-paragraph
 		        var subParagraphs = document.getElementsByClassName("sub-paragraph");
 
 		        // todo: change the text in the first sub paragraph to "Mission Accomplished!"
-		        subParagraphs[0].innerHTML = "Mission Accomplished";
+		        accomplishedButton.addEventListener("click", function(){
+	        		subParagraphs[0].innerHTML = "Mission Accomplished";
+		        });
 	        })();
 	    </script>
 	</body>
