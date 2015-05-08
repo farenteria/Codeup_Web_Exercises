@@ -39,27 +39,50 @@
 		        var mainHeader = document.getElementById("main-header");
 		        var subHeader = document.getElementById("sub-header");
 		        var listItems = document.getElementsByTagName("li");
-		        var subParagraphs = document.getElementsByClassName("sub-paragraph");
+		        var subParagraphs = document.getElementsByClassName("sub-paragraph");		        
 
+		       // console.log(headingText == "Hello World!");
 		        // todo: set inner html of mainHeader to "JavaScript is Cool"
 		        headingButton.addEventListener("click", function(){
-		            mainHeader.innerHTML = "JavaScript is Cool";	
+		        	var headingText = mainHeader.innerHTML;
+		        	if(headingText === "JavaScript is Cool"){
+		        		mainHeader.innerHTML = "Hello World!";
+		        	} else{
+		            	mainHeader.innerHTML = "JavaScript is Cool";  		
+		        	}
 		        });
 
 		        // todo: set the text color of subHeader to blue
 		        subHeadButton.addEventListener("click", function(){
-		        	subHeader.style["color"] = "blue";
+		        	var currentColor = subHeader.style["color"];
+
+		        	if(currentColor == "blue"){
+		        		subHeader.style["color"] = "black";
+		        	} else{
+		        		subHeader.style["color"] = "blue";
+		        	}	
 		        });
 
 		        // todo: set text color on every other list item to grey
 		        // todo: set text color of li with dbid = 1 to blue
 		        greyButton.addEventListener("click", function(){
-		        	for(var i = 0; i < listItems.length; i = i + 2){
-		        		listItems[i].style["color"] = "grey";
+		        	var currentColor;
 
+		        	for(var i = 0; i < listItems.length; i = i + 2){
+		        		currentColor = listItems[i].style["color"];
+
+		        		if(currentColor != "gray"){
+		        			listItems[i].style["color"] = "gray";
+		        		} else{
+		        			listItems[i].style["color"] = "black";
+		        		}
+		        	
+		        		console.log(listItems[0].style["color"]);
 			        	//this will only run the first time. this is acceptable. I'll fight you for it
-			        	if(listItems[i].attributes["data-dbid"].value == "1"){
+			        	if(listItems[i].attributes["data-dbid"].value == "1" && listItems[i].style["color"] == "gray"){	        		
 			        		listItems[i].style["color"] = "blue";
+			        	} else if (listItems[i].attributes["data-dbid"].value == "1") {
+			        		listItems[i].style["color"] = "black";
 			        	}
 			        }
 		        });       
