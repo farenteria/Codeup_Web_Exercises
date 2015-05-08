@@ -39,7 +39,8 @@
 		        var mainHeader = document.getElementById("main-header");
 		        var subHeader = document.getElementById("sub-header");
 		        var listItems = document.getElementsByTagName("li");
-		        var subParagraphs = document.getElementsByClassName("sub-paragraph");		        
+		        var subParagraphs = document.getElementsByClassName("sub-paragraph");
+		        var paragraphText = subParagraphs[0].innerHTML;	        
 
 		       // console.log(headingText == "Hello World!");
 		        // todo: set inner html of mainHeader to "JavaScript is Cool"
@@ -71,25 +72,32 @@
 		        	for(var i = 0; i < listItems.length; i = i + 2){
 		        		currentColor = listItems[i].style["color"];
 
-		        		if(currentColor != "gray"){
+		        		if(currentColor != "gray" && currentColor != "blue"){
 		        			listItems[i].style["color"] = "gray";
 		        		} else{
 		        			listItems[i].style["color"] = "black";
 		        		}
-		        	
-		        		console.log(listItems[0].style["color"]);
+
 			        	//this will only run the first time. this is acceptable. I'll fight you for it
-			        	if(listItems[i].attributes["data-dbid"].value == "1" && listItems[i].style["color"] == "gray"){	        		
+			        	if(listItems[0].style["color"] == "gray"){	        		
 			        		listItems[i].style["color"] = "blue";
-			        	} else if (listItems[i].attributes["data-dbid"].value == "1") {
+			        		greyButton.innerHTML = "Back in Black";
+			        	} else if (listItems[i].attributes["data-dbid"].value == "1" && listItems[i].style["color"] == "blue") {
 			        		listItems[i].style["color"] = "black";
+			        		greyButton.innerHTML = "Single Shade of Grey (and Blue)";
 			        	}
 			        }
-		        });       
+		        });
 
 		        // todo: change the text in the first sub paragraph to "Mission Accomplished!"
 		        accomplishedButton.addEventListener("click", function(){
-	        		subParagraphs[0].innerHTML = "Mission Accomplished";
+		        	if(subParagraphs[0].innerHTML == "Mission Accomplished"){
+		        		subParagraphs[0].innerHTML = paragraphText;
+		        		accomplishedButton.innerHTML = "Unaccomplish Mission";
+		        	} else{
+		        		subParagraphs[0].innerHTML = "Mission Accomplished";
+		        		accomplishedButton.innerHTML = "Accomplish!!! EVERYTHING!";
+		        	}
 		        });
 	        })();
 	    </script>
