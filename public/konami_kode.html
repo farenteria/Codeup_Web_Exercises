@@ -1,13 +1,33 @@
 <!DOCTYPE html>
-<<html>
+<html>
 	<head>
 		<title>Konami</title>
 	</head>
-	<body>
+	<body id="for-the-code">
 		<script>
 		(function(){
 			"use strict";
-		}();
+
+			var konami_kode = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65, 13];
+			var index = 0;
+			var buttonPresses = document.getElementById("for-the-code");
+
+			buttonPresses.addEventListener("keyup", function(e){
+				if(index < konami_kode.length && e.keyCode == konami_kode[index]){
+					index++;
+					if(index == konami_kode.length){
+						alert("30 LIVES!");
+						index = 0;
+					}
+				}
+				else{
+					index = 0;
+				}
+				
+				// console.log("key: " + e.keyCode);
+				// console.log("index: " + index);
+			});
+		})();
 		</script>
 	</body>
 </html>
