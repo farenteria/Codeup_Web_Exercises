@@ -20,8 +20,14 @@ html{
 
 .column{
 	float: left;
-	padding: 10px;
+	padding-left: 10px;
+	padding-right: 10px;
 	width: 100%;
+}
+
+.column > .row{
+	margin-left: -10px;
+	margin-right: -10px;
 }
 
 .column.one-eighth{
@@ -34,6 +40,10 @@ html{
 
 .column.one-sixth{
 	width: 16.66666666666666%;
+}
+
+.column.one-fifth{
+	width: 20%;
 }
 
 .column.one-fourth{
