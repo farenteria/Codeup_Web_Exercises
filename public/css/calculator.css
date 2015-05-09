@@ -1,4 +1,40 @@
 .container{
 	margin: 0 auto;
-	max-width: 600px;
+	max-width: 300px;
+}
+
+.number{
+	background-color: #E0E0E0;
+}
+
+.orange{
+	background-color: #FE9340;
+}
+
+button{
+	border: 1px solid #8E8E8E;
+}
+
+#one{
+	border-radius: 10px 0 0 0;
+}
+
+#zero{
+	border-radius: 0 0 0 10px;
+}
+
+#divide{
+	border-radius: 0 0 10px 0;
+}
+
+#plus{
+	border-radius: 0 10px 0 0;
+}
+
+#first-num-field{
+	border-radius: 5px 0 0 5px;
+}
+
+#second-num-field{
+	border-radius: 0 5px 5px 0;
 }
