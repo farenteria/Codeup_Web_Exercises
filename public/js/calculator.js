@@ -8,33 +8,46 @@
 	var operField = document.getElementById("oper-field");
 	var secondNumField = document.getElementById("second-num-field");
 	var clearButton = document.getElementById("clear");
+	var equalsButton = document.getElementById("equals");
 	var numbersButtons = document.getElementsByClassName("number");
 	var operatorButtons = document.getElementsByClassName("operator");
 	var onFirstNumber = true;
 
+	//saves each number when pressed to approriate variable
 	for(var i = 0; i < numbersButtons.length; i++){
 		numbersButtons[i].addEventListener("click", function(){
 			if(onFirstNumber){
 				firstNum += this.innerHTML;
-				console.log("First Number: " + firstNum);
+				firstNumField.value = firstNum;
 			} else{
 				secondNum += this.innerHTML;
-				console.log("Second Number: " + secondNum);
+				secondNumField.value = secondNum;
 			}
 		});
 	}
 
+	//saves operator as a string
 	for(var i = 0; i < operatorButtons.length; i++){
 		operatorButtons[i].addEventListener("click", function(){
 			operator = this.innerHTML;
 			onFirstNumber = false;
-			console.log("Operator: " + operator);
+			operField.value = operator;
 		});
 	}
 
+	//when clear is pressed, clear everything
 	clearButton.addEventListener("click", function(){
 		firstNum = "";
 		secondNum = "";
 		operator ="";
+
+		firstNumField.value = firstNum;
+		secondNumField.value = secondNum;
+		operField.value = operator;
+	})
+
+	equalsButton.addEventListener("click", function(){
+		onFirstNumber = true;
+
 	})
 })();
