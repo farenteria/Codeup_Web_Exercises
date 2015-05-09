@@ -12,6 +12,7 @@
 	var equalsButton = document.getElementById("equals");
 	var numbersButtons = document.getElementsByClassName("number");
 	var operatorButtons = document.getElementsByClassName("operator");
+	var negativeButton = document.getElementById("neg");
 
 	function onEquals(){
 		onFirstNumber = true;
@@ -81,6 +82,17 @@
 	secondNumField.addEventListener("keypress", function(e){
 		if(e.keyCode == 13){
 			onEquals();
+		}
+	});
+
+	negativeButton.addEventListener("click", function(){
+		var negativeSign ="-";
+		if(onFirstNumber){
+			firstNum = negativeSign.concat(firstNum);
+			firstNumField.value = firstNum
+		} else{
+			secondNum = negativeSign.concat(secondNum);
+			secondNumField.value = secondNum;
 		}
 	});
 })();
