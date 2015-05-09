@@ -49,5 +49,22 @@
 	equalsButton.addEventListener("click", function(){
 		onFirstNumber = true;
 
+		firstNum = parseInt(firstNum);
+		secondNum = parseInt(secondNum);
+
+		switch(operator){
+			case "+":
+				firstNumField.value = firstNum + secondNum;
+				break;
+			case "-":
+				firstNumField.value = firstNum - secondNum;
+				break;
+			case "*":
+				firstNumField.value = firstNum * secondNum;
+				break;
+			case "/":
+				firstNumField.value = firstNum / secondNum;
+				break;
+		}
 	})
 })();
