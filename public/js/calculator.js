@@ -44,8 +44,9 @@
 		firstNumField.value = firstNum;
 		secondNumField.value = secondNum;
 		operField.value = operator;
-	})
+	});
 
+	//when equals is pressed, do operation and print in first field
 	equalsButton.addEventListener("click", function(){
 		onFirstNumber = true;
 
@@ -66,5 +67,9 @@
 				firstNumField.value = firstNum / secondNum;
 				break;
 		}
-	})
+
+		firstNum = "";
+		secondNum = "";
+		operator = "";
+	});
 })();
