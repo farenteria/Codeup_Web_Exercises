@@ -77,14 +77,15 @@
 	});
 
 	//when equals is pressed, do operation and print in first field
-	equalsButton.addEventListener("click", onEquals)
-	//when Enter is pressed on second number field
+	equalsButton.addEventListener("click", onEquals);
+	//when Enter is pressed on second number field do same as above statement
 	secondNumField.addEventListener("keypress", function(e){
 		if(e.keyCode == 13){
 			onEquals();
 		}
 	});
 
+	//makes current number negative
 	negativeButton.addEventListener("click", function(){
 		var negativeSign ="-";
 		if(onFirstNumber){
