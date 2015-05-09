@@ -9,36 +9,38 @@
 	<body>
 		<form class="container">
 			<div id="text-row" class="row">
-				<input type="text" name="first-num" class="column one-third" id="first-field">
+				<input type="text" name="first-num" class="column one-third" id="first-num-field">
 				<input type="text" name="operator" class="column one-third" id="oper-field">
-				<input type="text" name="sec-num" class="column one-third" id="third-field">
+				<input type="text" name="sec-num" class="column one-third" id="second-num-field">
 			</div>
 
 			<div id="first-row" class="row">	
-				<button class="column one-fourth" id="one">1</button>
-				<button class="column one-fourth" id="two">2</button>
-				<button class="column one-fourth" id="three">3</button>
+				<button class="column one-fourth number" id="one">1</button>
+				<button class="column one-fourth number" id="two">2</button>
+				<button class="column one-fourth number" id="three">3</button>
 				<button class="column one-fourth" id="plus">+</button>
 			</div>
 			<div id="second-row" class="row">
-				<button class="column one-fourth" id="4">4</button>
-				<button class="column one-fourth" id="five">5</button>
-				<button class="column one-fourth" id="six">6</button>
+				<button class="column one-fourth number" id="4">4</button>
+				<button class="column one-fourth number" id="five">5</button>
+				<button class="column one-fourth number" id="six">6</button>
 				<button class="column one-fourth" id="minus">-</button>
 			</div>
 			<div id="third-row" class="row">
-				<button class="column one-fourth" id="seven">7</button>
-				<button class="column one-fourth" id="eight">8</button>
-				<button class="column one-fourth" id="nine">9</button>
+				<button class="column one-fourth number" id="seven">7</button>
+				<button class="column one-fourth number" id="eight">8</button>
+				<button class="column one-fourth number" id="nine">9</button>
 				<button class="column one-fourth" id="times">*</button>
 			</div>
 			
 			<div id="fourth-row" class="row">
 				<button class="column one-fourth" id="clear">c</button>
-				<button class="column one-fourth" id="zero">0</button>
+				<button class="column one-fourth number" id="zero">0</button>
 				<button class="column one-fourth" id="equals">=</button>
 				<button class="column one-fourth" id="divide">/</button>
 			</div>
 		</form>
+
+		<script src="js/calculator.js"></script>
 	</body>
 </html>
