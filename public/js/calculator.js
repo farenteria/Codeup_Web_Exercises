@@ -48,7 +48,6 @@
 			if(onFirstNumber){
 				firstNum += this.innerHTML;
 				firstNumField.value = firstNum;
-					console.log(firstNum);
 			} else{
 				secondNum += this.innerHTML;
 				secondNumField.value = secondNum;

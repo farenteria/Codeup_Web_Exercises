@@ -3,38 +3,30 @@
 	max-width: 300px;
 }
 
-.number{
-	background-color: #E0E0E0;
-}
-
 .orange{
 	background-color: #FE9340;
+}
+
+.grey{
+	background-color: #E0E0E0;
 }
 
 button{
 	border: 1px solid #8E8E8E;
 }
 
-#one{
-	border-radius: 10px 0 0 0;
-}
-
 #zero{
 	border-radius: 0 0 0 10px;
 }
 
-#divide{
+#equals{
 	border-radius: 0 0 10px 0;
 }
 
-#plus{
-	border-radius: 0 10px 0 0;
-}
-
 #first-num-field{
-	border-radius: 5px 0 0 5px;
+	border-radius: 5px 0 0 0;
 }
 
 #second-num-field{
-	border-radius: 0 5px 5px 0;
+	border-radius: 0 5px 0 0;
 }
