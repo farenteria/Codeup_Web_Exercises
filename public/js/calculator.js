@@ -4,6 +4,7 @@
 	var firstNum = "";
 	var secondNum = "";
 	var operator = "";
+	var onFirstNumber = true;
 	var firstNumField = document.getElementById("first-num-field");
 	var operField = document.getElementById("oper-field");
 	var secondNumField = document.getElementById("second-num-field");
@@ -11,7 +12,6 @@
 	var equalsButton = document.getElementById("equals");
 	var numbersButtons = document.getElementsByClassName("number");
 	var operatorButtons = document.getElementsByClassName("operator");
-	var onFirstNumber = true;
 
 	//saves each number when pressed to approriate variable
 	for(var i = 0; i < numbersButtons.length; i++){
@@ -47,7 +47,16 @@
 	});
 
 	//when equals is pressed, do operation and print in first field
-	equalsButton.addEventListener("click", function(){
+	equalsButton.addEventListener("click", onEquals)
+	//when Enter is pressed on second number field
+	secondNumField.addEventListener("keypress", function(e){
+		console.log(e.keyCode);
+		if(e.keyCode == 13){
+			onEquals();
+		}
+	});
+
+	function onEquals(){
 		onFirstNumber = true;
 
 		firstNum = parseInt(firstNum);
@@ -68,8 +77,11 @@
 				break;
 		}
 
+		//everything but first text field will be cleared
 		firstNum = "";
 		secondNum = "";
 		operator = "";
-	});
+		operField.value = "";
+		secondNumField.value = "";
+	}
 })();
