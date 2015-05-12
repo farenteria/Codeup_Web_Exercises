@@ -5,7 +5,7 @@
 	<style>
 		#map-canvas{
 			width: 320px;
-			height: 480px;
+			height: 320px;
 		}
 	</style>
 </head>
@@ -15,7 +15,7 @@
 	<script>
 	"use strict";
 	(function(){
-		var address = "3329 Fort Blvd, El Paso, TX 79930";
+		var address = "3329 Fort Blvd, El Paso, TX 79930"; //Cicala's Pizza. Yeah, boi
 		var geocoder = new google.maps.Geocoder();
 
 		geocoder.geocode({ "address": address}, function(results, status){
