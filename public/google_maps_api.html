@@ -43,17 +43,28 @@
 					//puts marker right on top of the restaurant. 
 					marker = new google.maps.Marker({
 						position: cicalasLocation,
-						map: map
+						map: map,
+						opacity: 0.7
 					});
+
+					//makes marker bounce like if it was in a hip hop video
+					marker.setAnimation(google.maps.Animation.BOUNCE); 
 
 					//creates an info window with name of resteraunt
 					infoWindow = new google.maps.InfoWindow({
-						content: "Cicala's Italian Pizza (Don't trust Street View)"
+						content: "Cicala's Italian Pizza (Don't trust Street View)",
 					});
 
-					//places the info window on canvas
-					infoWindow.open(map, marker);
+					//opens info window when marker is clicked
+					google.maps.event.addListener(marker, "click", function(){
+						infoWindow.open(map, marker);	
+						marker.setAnimation(null); //stop marker animation			
+					});
 
+					//when info window is close, marker starts bouncing again
+					google.maps.event.addListener(infoWindow, "closeclick", function(){
+						marker.setAnimation(google.maps.Animation.BOUNCE);
+					})
 				} else{
 					alert("Geocode unsuccessful, status: " + status);
 				}
