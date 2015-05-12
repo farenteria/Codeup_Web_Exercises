@@ -1,5 +1,6 @@
+"use strict"
 (function(){
-	"use strict"
+	
 
 	var firstNum = "";
 	var secondNum = "";
@@ -74,6 +75,8 @@
 		firstNumField.value = firstNum;
 		secondNumField.value = secondNum;
 		operField.value = operator;
+
+		onFirstNumber = true;
 	});
 
 	//when equals is pressed, do operation and print in first field
