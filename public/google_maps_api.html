@@ -44,7 +44,8 @@
 					marker = new google.maps.Marker({
 						position: cicalasLocation,
 						map: map,
-						opacity: 0.7
+						opacity: 0.7,
+						icon: "/img/pizza_icon.png"
 					});
 
 					//makes marker bounce like if it was in a hip hop video
@@ -58,12 +59,14 @@
 					//opens info window when marker is clicked
 					google.maps.event.addListener(marker, "click", function(){
 						infoWindow.open(map, marker);	
-						marker.setAnimation(null); //stop marker animation			
+						marker.setAnimation(null); //stop marker animation
+						marker.setOpacity(1.0);		
 					});
 
 					//when info window is close, marker starts bouncing again
 					google.maps.event.addListener(infoWindow, "closeclick", function(){
 						marker.setAnimation(google.maps.Animation.BOUNCE);
+						marker.setOpacity(0.7);
 					})
 				} else{
 					alert("Geocode unsuccessful, status: " + status);
