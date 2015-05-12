@@ -21,6 +21,7 @@
 		var cicalasLocation;
 		var map;
 		var mapOptions;
+		var infoWindow;
 
 		geocoder.geocode({ "address": address}, function(results, status){
 				if(status == google.maps.GeocoderStatus.OK){
@@ -36,7 +37,13 @@
 					marker = new google.maps.Marker({
 						position: cicalasLocation,
 						map: map
-					})
+					});
+
+					infoWindow = new google.maps.InfoWindow({
+						content: "Cicala's Italian Pizza (Don't trust Street View)"
+					});
+
+					infoWindow.open(map, marker);
 
 				} else{
 					alert("Geocode unsuccessful, status: " + status);
