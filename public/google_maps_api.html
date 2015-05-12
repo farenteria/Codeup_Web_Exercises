@@ -23,7 +23,10 @@
 		var mapOptions;
 		var infoWindow;
 
-		geocoder.geocode({ "address": address}, function(results, status){
+		geocoder.geocode({ 
+				"address": address
+			}, 
+			function(results, status){
 				if(status == google.maps.GeocoderStatus.OK){
 					mapOptions = {
 						zoom: 18,
@@ -32,17 +35,23 @@
 
 					map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
 					
-					cicalasLocation = { lat: 31.806325, lng: -106.454533};
+					//The greatest location on Earth
+					cicalasLocation = { 
+						lat: 31.806325, lng: -106.454533
+					};
 
+					//puts marker right on top of the restaurant. 
 					marker = new google.maps.Marker({
 						position: cicalasLocation,
 						map: map
 					});
 
+					//creates an info window with name of resteraunt
 					infoWindow = new google.maps.InfoWindow({
 						content: "Cicala's Italian Pizza (Don't trust Street View)"
 					});
 
+					//places the info window on canvas
 					infoWindow.open(map, marker);
 
 				} else{
