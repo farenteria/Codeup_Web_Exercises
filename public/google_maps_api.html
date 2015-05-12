@@ -11,10 +11,25 @@
 </head>
 <body>
 	<div id="map-canvas"></div>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD7QaaadMpLB7MLa0JxjrMa5YfLPYHtLVI"></script>
 	<script>
 	"use strict";
 	(function(){
-		var bestAddress = "3329 Fort Blvd, El Paso, TX 79930";
+		var address = "3329 Fort Blvd, El Paso, TX 79930";
+		var geocoder = new google.maps.Geocoder();
+
+		geocoder.geocode({ "address": address}, function(results, status){
+				if(status == google.maps.GeocoderStatus.OK){
+					var mapOptions = {
+						zoom: 18,
+						center: results[0].geometry.location
+					}
+					var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+				} else{
+					alert("Geocode unsuccessful, status: " + status);
+				}
+			}
+		);
 	})();
 	</script>
 </body>
