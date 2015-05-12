@@ -17,39 +17,48 @@
 	(function(){
 		var address = "3329 Fort Blvd, El Paso, TX 79930"; //Cicala's Pizza. Yeah, boi
 		var geocoder = new google.maps.Geocoder();
+		var cicalasLocation = { 
+			lat: 31.806325, lng: -106.454533
+		};
 		var marker;
-		var cicalasLocation;
 		var map;
 		var mapOptions;
 		var infoWindow;
+
+		//makes marker bounce like if it was in a hip hop video
+		function startMarkerAnimation(){
+			marker.setAnimation(google.maps.Animation.BOUNCE);
+			marker.setOpacity(0.7);
+		}
+
+		//stops the bouncing
+		function stopMarkerAnimation(){
+			infoWindow.open(map, marker);	
+			marker.setAnimation(null); //stop marker animation
+			marker.setOpacity(1.0);		
+		}
 
 		geocoder.geocode({ 
 				"address": address
 			}, 
 			function(results, status){
 				if(status == google.maps.GeocoderStatus.OK){
+					//initial map options
 					mapOptions = {
-						zoom: 18,
+						zoom: 15,
 						center: { lat: 31.806325, lng: -106.454533}
 					}
 
 					map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
-					
-					//The greatest location on Earth
-					cicalasLocation = { 
-						lat: 31.806325, lng: -106.454533
-					};
 
 					//puts marker right on top of the restaurant. 
 					marker = new google.maps.Marker({
 						position: cicalasLocation,
 						map: map,
-						opacity: 0.7,
 						icon: "/img/pizza_icon.png"
 					});
 
-					//makes marker bounce like if it was in a hip hop video
-					marker.setAnimation(google.maps.Animation.BOUNCE); 
+					startMarkerAnimation(); 
 
 					//creates an info window with name of resteraunt
 					infoWindow = new google.maps.InfoWindow({
@@ -58,16 +67,12 @@
 
 					//opens info window when marker is clicked
 					google.maps.event.addListener(marker, "click", function(){
-						infoWindow.open(map, marker);	
-						marker.setAnimation(null); //stop marker animation
-						marker.setOpacity(1.0);		
+						stopMarkerAnimation();
+						map.setZoom(18); //zoom in on the bad boy
 					});
 
 					//when info window is close, marker starts bouncing again
-					google.maps.event.addListener(infoWindow, "closeclick", function(){
-						marker.setAnimation(google.maps.Animation.BOUNCE);
-						marker.setOpacity(0.7);
-					})
+					google.maps.event.addListener(infoWindow, "closeclick", startMarkerAnimation);
 				} else{
 					alert("Geocode unsuccessful, status: " + status);
 				}
