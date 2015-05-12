@@ -2,10 +2,7 @@
 (function(){
 	var address = "3329 Fort Blvd, El Paso, TX 79930"; //Cicala's Pizza. Yeah, boi
 	var geocoder = new google.maps.Geocoder();
-	var cicalasLocation = { 
-		lat: 31.806325, 
-		lng: -106.454533
-	};
+	var cicalasLocation = " 3329 Fort Blvd, El Paso, TX 79930";
 	var marker;
 	var map;
 	var mapOptions;
@@ -41,7 +38,7 @@
 
 			//puts marker right on top of the restaurant. 
 			marker = new google.maps.Marker({
-				position: cicalasLocation,
+				position: results[0].geometry.location,
 				map: map,
 				icon: "/img/pizza_icon.png"
 			});
