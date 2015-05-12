@@ -4,8 +4,8 @@
 	<title>Google Maps API</title>
 	<style>
 		#map-canvas{
-			width: 400px;
-			height: 400px;
+			width: 500px;
+			height: 500px;
 		}
 	</style>
 </head>
@@ -18,7 +18,8 @@
 		var address = "3329 Fort Blvd, El Paso, TX 79930"; //Cicala's Pizza. Yeah, boi
 		var geocoder = new google.maps.Geocoder();
 		var cicalasLocation = { 
-			lat: 31.806325, lng: -106.454533
+			lat: 31.806325, 
+			lng: -106.454533
 		};
 		var marker;
 		var map;
@@ -28,14 +29,14 @@
 		//makes marker bounce like if it was in a hip hop video
 		function startMarkerAnimation(){
 			marker.setAnimation(google.maps.Animation.BOUNCE);
-			marker.setOpacity(0.7);
+			marker.setOpacity(1.0);
 		}
 
 		//stops the bouncing
 		function stopMarkerAnimation(){
 			infoWindow.open(map, marker);	
 			marker.setAnimation(null); //stop marker animation
-			marker.setOpacity(1.0);		
+			marker.setOpacity(0.7);		
 		}
 
 		geocoder.geocode({ 
@@ -46,7 +47,9 @@
 					//initial map options
 					mapOptions = {
 						zoom: 15,
-						center: { lat: 31.806325, lng: -106.454533}
+						center: { 
+							lat: 31.806325, 
+							lng: -106.454533}
 					}
 
 					map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
