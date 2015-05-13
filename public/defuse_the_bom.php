@@ -13,12 +13,14 @@
 
     <button id="defuser">Defuse the BOM</button>
 
+    <script src="/js/jquery-2.1.4.min.js"></script>
     <script>
         var detonationTimer = 5;
         var timerInterval = setInterval(updateTimer, 1000);
         var mustDefuse = true; //for button change
-        var button = document.getElementById("defuser");
-        var body = document.body;
+        //var button = document.getElementById("defuser");
+        //var body = document.body;
+        var random;
 
         // TODO: This function needs to be called once every second
         function updateTimer(){
@@ -37,7 +39,7 @@
         // cancel the interval/timeout for updateTimer()
         function defuseTheBOM(){
             clearInterval(timerInterval);
-            button.innerHTML = "Start timer again";
+            $("#defuser").text("Start timer again");
             alert("MY HERO!!!");
         }
 
@@ -47,29 +49,27 @@
                 defuseTheBOM();
                 mustDefuse = false;
             } else{ //countdown goes active if button is clicked while countdown is inactive
-                button.innerHTML = "Defuse the BOM";
+                $("#defuser").text("Defuse the BOM");
                 timerInterval = setInterval(updateTimer, 1000);
                 mustDefuse = true;
             }
 
             //moves button in random position (according to window size constraints)
-           button.style["top"] = Math.floor(Math.random() * window.innerHeight) + "px";
-           button.style["left"] = Math.floor(Math.random() * window.innerWidth) + "px";
+            random = Math.floor(Math.random() * window.innerHeight) + "px";
+            $("#defuser").css("top", random); 
+            
+            random = Math.floor(Math.random() * window.innerWidth) + "px";
+            $("#defuser").css("left", random);
         }
 
         function changeBodyOnExplode(){
-            body.style["background-color"] = "red";
-            body.innerHTML = "";
+            $("body").css("background-color", "red");
+            $("body").text("");
 
             //creates new paragraph with text, and adds it to body
-            var paragraph = document.createElement("P");
-            var paragraphText = document.createTextNode("BOOM");
-            paragraph.appendChild(paragraphText);
-            body.appendChild(paragraph);
-
-            paragraph.style["position"] = "absolute";
-            paragraph.style["font-size"] = "100px";
-    
+            $("body").append("<p>BOOM</p>");
+            $("p").css("position", "absolute");
+            $("p").css("font-size", "100px");
 
             setInterval(function (){
                 var randomHeight;
@@ -77,21 +77,17 @@
 
                 //helps to keep text mostly visible. if there's a better way, i'll change it
                 do{
-                    randomHeight = Math.round(Math.random() * window.innerHeight - paragraph.clientHeight);
-                    randomWidth = Math.round(Math.random() * window.innerWidth - paragraph.clientWidth);
+                    randomHeight = Math.round(Math.random() * window.innerHeight - $("p").height);
+                    randomWidth = Math.round(Math.random() * window.innerWidth - $("p").width);
                 } while(randomHeight < 0 || randomWidth < 0);
 
                 randomHeight = randomHeight + "px";
                 randomWidth = randomWidth + "px";
 
-                console.log("random: " + randomHeight + " " + randomWidth);
-                console.log("actual: " + window.innerHeight + "px " + window.innerWidth + " px");
-                console.log(paragraph.clientHeight);
-                console.log(paragraph.clientWidth);
-                console.log("");
-
-                paragraph.style["top"] = randomHeight;
-                paragraph.style["left"] = randomWidth;
+                $("p").css("top", randomHeight);
+                $("p").css("left", randomWidth);
+                // paragraph.style["top"] = randomHeight;
+                // paragraph.style["left"] = randomWidth;
             }, 1000);
         }
 
