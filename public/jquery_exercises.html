@@ -4,11 +4,24 @@
 	<title>JQuery</title>
 </head>
 <body>
+	<h1 id="heading">Artemis</h1>
+	<p id="first-paragraph">I won with Artemis today. Utterly destroyed the enemy. How did I do it? Well...</p>
+	<ul id="list" class="grey-background">
+		<li>I didn't overextend myself. I've made the mistake in the past, and I've made sure to be more careful.</li>
+		<li>Be aggressive in the early game. I wasn't facing an Athena or Sylvanus. No need to back off.</li>
+		<li>Use Tusky effectively. Smite has added a cone to show where he is going to head first. Thank you, based HiRez.</li>
+	<div class="grey-background">
+		<p>Artemis is my favorite god in the game. I can't stop.</p>
+		<p>Just a paragraph.</p>
+	</div>
+	</ul>
 	<script src="/js/jquery-2.1.4.min.js"></script>
 	<script>
-		$(document).ready(function(){
-			alert("The DOM is ready to see you now.");
-		});
+		"use strict";
+		(function(){
+			$("#heading").css("font-style", "italic");
+			$("#first-paragraph").text("blah blah blah");
+		})();
 	</script>
 </body>
 </html>
