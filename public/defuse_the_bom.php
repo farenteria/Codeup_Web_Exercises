@@ -18,9 +18,8 @@
         var detonationTimer = 5;
         var timerInterval = setInterval(updateTimer, 1000);
         var mustDefuse = true; //for button change
-        //var button = document.getElementById("defuser");
-        //var body = document.body;
         var random;
+        var defuser;
 
         // TODO: This function needs to be called once every second
         function updateTimer(){
@@ -29,7 +28,7 @@
                 clearInterval(timerInterval); //no need for this one to keep running
                 changeBodyOnExplode();
             } else if (detonationTimer > 0) {
-                document.getElementById('timer').innerHTML = detonationTimer;
+                $("#timer").text(detonationTimer);
             }
 
             detonationTimer--;
@@ -89,13 +88,7 @@
             }, 1000);
         }
 
-        // Don't modify anything below this line!
-        //
-        // This causes the defuseTheBOM() function to be called
-        // when the "defuser" button is clicked.
-        // We will learn about events in the DOM lessons
-        var defuser = document.getElementById('defuser');
-        defuser.addEventListener('click', buttClick, false);
+        $("#defuser").click(buttClick);
     </script>
 </body>
 </html>
