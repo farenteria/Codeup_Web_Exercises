@@ -77,8 +77,8 @@
 
                 //helps to keep text mostly visible. if there's a better way, i'll change it
                 do{
-                    randomHeight = Math.round(Math.random() * window.innerHeight - $("p").height);
-                    randomWidth = Math.round(Math.random() * window.innerWidth - $("p").width);
+                    randomHeight = Math.round(Math.random() * window.innerHeight - $("p").height());
+                    randomWidth = Math.round(Math.random() * window.innerWidth - $("p").width());
                 } while(randomHeight < 0 || randomWidth < 0);
 
                 randomHeight = randomHeight + "px";
@@ -86,8 +86,6 @@
 
                 $("p").css("top", randomHeight);
                 $("p").css("left", randomWidth);
-                // paragraph.style["top"] = randomHeight;
-                // paragraph.style["left"] = randomWidth;
             }, 1000);
         }
 
