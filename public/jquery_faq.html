@@ -10,7 +10,7 @@
 <body>
 	<dl>
 		<dt>Who is the director of the National Park Service?</dt>
-		<dd class="invisible">Jonathan B. Jarvis</dd>
+		<dd class="invisible ">Jonathan B. Jarvis</dd>
 
 		<dt>Is this the sa-</dt>
 		<dd class="invisible">No. That's a comic book character.</dd>
@@ -39,5 +39,19 @@
 		<dt>Can we smim in Yellowstone waters?</dt>
 		<dd class="invisible">In some places you may. Please visit <a href="http://www.nps.gov/yell/faqs.htm#Yellowstone National Park General FAQs">this link</a> for more information.</dd>
 	</dl>
+
+	<a href="#">Click me!</a>
+
+	<script src="/js/jquery-2.1.4.min.js"></script>
+	<script>
+		(function(){
+			"use strict";
+
+			$("a").click(function(event){
+				event.preventDefault();
+				$("dd").toggleClass("invisible");
+			})
+		})();
+	</script>
 </body>
 </html>
