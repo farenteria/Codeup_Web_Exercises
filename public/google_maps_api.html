@@ -2,15 +2,16 @@
 <html>
 <head>
 	<title>Google Maps API</title>
-	<link rel="stylesheet" type="text/css" href="/css/normalize.css">
-	<link rel="stylesheet" type="text/css" href="/css/google_maps_api.css">
+	<link rel="stylesheet" href="/css/normalize.css">
+	<link rel="stylesheet" href="/css/grid.css">
+	<link rel="stylesheet" href="/css/google_maps_api.css">
 </head>
 <body>
-	<footer>
-		<p>Learn more about the greatest place on Earth: </p>
-		<a href="http://www.urbanspoon.com/r/132/1799006/restaurant/Northeast/Cicalas-El-Paso">Urban Spoon Page</a>
-	</footer>
-	<div id="map-canvas"></div>
+	<div class="row">
+		<p class="column one-half">Learn more about the greatest place on Earth: <a href="http://www.urbanspoon.com/r/132/1799006/restaurant/Northeast/Cicalas-El-Paso">Urban Spoon Page</a></p>
+		<div class="map column one-half" id="map-canvas"></div>
+	</div>
+
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD7QaaadMpLB7MLa0JxjrMa5YfLPYHtLVI"></script>
 	<script src="/js/google_maps_api.js"></script>
 </body>
