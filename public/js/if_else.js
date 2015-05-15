@@ -1,3 +1,4 @@
+"use strict";
 // ignore these lines for now
 // just know that the variable 'color' will end up with a random value from the colors array
 var colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
@@ -30,4 +31,4 @@ else if(color == "violet" || color == "indigo"){
 }
 // TODO: Using the ternary operator, conditionally log a statement that
 //       says whether the random color matches your favorite color.
-(color == "green") ? console.log("This is my favorite color.") : console.log("This is not my favorite color, and I'm angry");
+(color == favorite) ? console.log("This is my favorite color.") : console.log("This is not my favorite color, and I'm angry");
