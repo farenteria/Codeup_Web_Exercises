@@ -18,8 +18,30 @@
 	<script src="/js/jquery-2.1.4.min.js"></script>
 	<script>
 		"use strict";
+		var isTrue = true;;
 		(function(){
-			$("h1, p, li").css("background-color", "yellow");
+			$("h1").click(function(){
+				if(isTrue){
+					$("h1").css("background-color", "yellow");
+					isTrue = false;
+				} else{
+					$("h1").css("background-color", "white");
+					isTrue = true;
+				}
+			});
+
+			$("p").dblclick(function(){
+				$("p").css("font-size", "18px");
+			})
+
+			$("li").hover(
+				function(){
+					$("li").css("color", "red");
+				},
+				function(){
+					$("li").css("color", "black");
+				}
+			);
 		})();
 	</script>
 </body>
