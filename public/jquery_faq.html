@@ -69,7 +69,13 @@
 			$("a").click(function(event){
 				event.preventDefault();
 				$("dd").toggleClass("invisible");
-			})
+			});
+
+			$("li").each(function(index){
+				if(index % 4 == 0){
+					$(this).css("font-weight", "bold");
+				}
+			});
 		})();
 	</script>
 </body>
