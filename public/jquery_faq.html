@@ -71,10 +71,15 @@
 				$("dd").toggleClass("invisible");
 			});
 
+			//makes first list item of each list bod
 			$("li").each(function(index){
 				if(index % 4 == 0){
 					$(this).css("font-weight", "bold");
 				}
+			});
+
+			$("li").click(function(){
+				$(this).parent().addClass("invisible");
 			});
 		})();
 	</script>
