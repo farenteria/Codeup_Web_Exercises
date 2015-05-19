@@ -3,14 +3,6 @@
 <head>
 	<title>Park FAQ</title>
 	<style>
-		#box{
-			border: 1px solid black;
-			width: 500px;
-			background-color: #683426;
-			float: right;
-			border-radius: 25px;
-		}
-
 		html{
 			box-sizing: border-box;
 		}
@@ -21,6 +13,19 @@
 
 		body{
 			background-image: url("img/grand-canyon.jpg");
+			color: #F6EDCA;
+		}
+		
+		.link{
+			color: #F5F5F4;
+		}
+
+		#box{
+			border: 1px solid black;
+			width: 500px;
+			background-color: #683426;
+			float: right;
+			border-radius: 25px;
 		}
 	</style>
 </head>
@@ -55,10 +60,10 @@
 			<dd>No. The honor belongs to Wrangell-St. Elias National Park and Preserve.</dd>
 
 			<dt>Can we smim in Yellowstone waters?</dt>
-			<dd>In some places you may. Please visit <a href="http://www.nps.gov/yell/faqs.htm#Yellowstone National Park General FAQs">this link</a> for more information.</dd>
+			<dd>In some places you may. Please visit <a class="link" href="http://www.nps.gov/yell/faqs.htm#Yellowstone National Park General FAQs">this link</a> for more information.</dd>
 		</dl>
 
-		<a href="#">Click me!</a>
+		<a class="link" href="#">Click me!</a>
 
 		<ul>
 			<li><h3>Great Smoky Mountains</h3></li>
@@ -87,7 +92,7 @@
 		(function(){
 			"use strict";
 
-			//toggles the class that controls the display attribute
+			//toggles dictionary definitions
 			$("a").click(function(event){
 				event.preventDefault();
 				$("dd").toggle();
@@ -96,7 +101,7 @@
 			//makes first list item of each list bold
 			$("ul").each(function(index){
 				$(this).children().first().css("font-weight", "bold");
-				$(this).children().first().css("color", "orange");
+				$(this).children().first().css("color", "orange"); //purely to show that code works
 			});
 
 			//when a child list item is clicks, its parent makes like a tree and gets out of there
