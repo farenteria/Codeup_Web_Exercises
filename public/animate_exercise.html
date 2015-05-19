@@ -44,6 +44,7 @@
 
             'use strict';
             var hasMoved = false;
+            var hasScaledDown = false;
 
             // todo: Move the box by 100 pixels from the left
             $("#btn-move").click(function(){
@@ -61,7 +62,23 @@
                     hasMoved = true;
                 }
             });
+
             // todo: Scale the width up by 50%
+            $("#btn-scale-down").click(function(){
+                if(hasScaledDown){
+                    $("#animate-box").animate({
+                        width: "20%" //for some reason, this returns to original size
+                    });
+
+                    hasScaledDown = false;
+                } else{
+                    $("#animate-box").animate({
+                        width: "50%",
+                    });
+
+                    hasScaledDown = true;
+                }
+            });
 
             // todo: Use opacity to make the box invisible
 
