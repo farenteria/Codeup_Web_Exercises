@@ -90,6 +90,15 @@
                 })
             }
 
+            function doAll(){
+                moveBox();
+                scaleBox();
+                fadeOutBox();
+                fadeInBox();
+                scaleBox();
+                moveBox();
+            }
+
             // todo: Move the box by 100 pixels from the left
             $("#btn-move").click(moveBox);
 
@@ -105,8 +114,7 @@
             // todo: Once all is done see if you can chain all the animations
             // to happen with the `Animate all` button.
             // Refresh to start over before hitting the button.
-            
-
+            $("#btn-all").click(doAll);
         })();
     
     </script>
