@@ -15,7 +15,7 @@
 			background-image: url("img/grand-canyon.jpg");
 			color: #F6EDCA;
 		}
-		
+
 		.link{
 			color: #F5F5F4;
 		}
@@ -65,48 +65,53 @@
 
 		<a class="link" href="#">Click me!</a>
 
-		<ul>
-			<li><h3>Great Smoky Mountains</h3></li>
-			<li>The largest national park east of the Rocky Mountains!</li>
-			<li>The Great Smoky Mountains is also the most visitd national park in the United States.</li>
-			<li>It is home to 4,000 plant species, 140 tree species, and 1,600 black bears.</li>
-			<li>This national park's name was inspired by the amount of people that have gotten second-hand cancer after visiting.</li>
-		</ul>
-		<ul>
-			<li><h3>Yosemite National Park</h3></li>
-			<li>The Ahwaneechee Native Americans called Yosemite home for over 4,000 years.</li>
-			<li>The California Gold Rush brought thousand of people to the area, and resulted in the Mariposa Indian War.</li>
-			<li>The Mariposa War caused the extinction of over 10 different types of butterflies.</li>
-			<li>Yosemite became a national park in 1890.</li>
-		</ul>
-		<ul>
-			<li><h3>Grand Canyon National Park</h3></li>
-			<li>The chasm took between 3 and 6 million years to form.</li>
-			<li>The grandness has been debated in the Supreme court for decades.</li>
-			<li>The Grand Canyon was formed by the Colorado River.</li>
-			<li>Part of the Colorado River is populated by the Hopi, Navajo, Havasupai, Paiute, and Hualapai native tribes.</li>
-		</ul>
+		<div class="park">
+			<h3>Great Smoky Mountains</h3>
+			<ul>
+				<li>The largest national park east of the Rocky Mountains!</li>
+				<li>The Great Smoky Mountains is also the most visitd national park in the United States.</li>
+				<li>It is home to 4,000 plant species, 140 tree species, and 1,600 black bears.</li>
+				<li>This national park's name was inspired by the amount of people that have gotten second-hand cancer after visiting.</li>
+			</ul>
+		</div>
+
+		<div class="park">
+			<h3>Yosemite National Park</h3>
+			<ul>
+				<li>The Ahwaneechee Native Americans called Yosemite home for over 4,000 years.</li>
+				<li>The California Gold Rush brought thousand of people to the area, and resulted in the Mariposa Indian War.</li>
+				<li>The Mariposa War caused the extinction of over 10 different types of butterflies.</li>
+				<li>Yosemite became a national park in 1890.</li>
+			</ul>
+		</div>
+
+		<div class="park">
+			<h3>Grand Canyon National Park</h3>
+			<ul>
+				<li>The chasm took between 3 and 6 million years to form.</li>
+				<li>The grandness has been debated in the Supreme court for decades.</li>
+				<li>The Grand Canyon was formed by the Colorado River.</li>
+				<li>Part of the Colorado River is populated by the Hopi, Navajo, Havasupai, Paiute, and Hualapai native tribes.</li>
+			</ul>
+		</div>
 	</div>
 	<script src="/js/jquery-2.1.4.min.js"></script>
 	<script>
 		(function(){
 			"use strict";
 
-			//toggles dictionary definitions
 			$("a").click(function(event){
 				event.preventDefault();
-				$("dd").toggle();
+				$("dd").fadeToggle();
 			});
 
-			//makes first list item of each list bold
+			//makes first list item of each list bold...for some reason
 			$("ul").each(function(index){
 				$(this).children().first().css("font-weight", "bold");
-				$(this).children().first().css("color", "orange"); //purely to show that code works
 			});
 
-			//when a child list item is clicks, its parent makes like a tree and gets out of there
-			$("li").click(function(){
-				$(this).parent().hide();
+			$(".park").click(function(){
+				$(this).find("ul").fadeToggle();
 			});
 		})();
 	</script>
