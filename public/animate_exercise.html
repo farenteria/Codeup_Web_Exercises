@@ -43,9 +43,24 @@
         (function(){
 
             'use strict';
+            var hasMoved = false;
 
             // todo: Move the box by 100 pixels from the left
+            $("#btn-move").click(function(){
+                if(hasMoved){
+                    $("#animate-box").animate({
+                        left: "0"
+                    });
 
+                    hasMoved = false;
+                } else{
+                    $("#animate-box").animate({
+                        left: "100"
+                    });
+
+                    hasMoved = true;
+                }
+            });
             // todo: Scale the width up by 50%
 
             // todo: Use opacity to make the box invisible
