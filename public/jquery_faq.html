@@ -99,10 +99,11 @@
 	<script>
 		(function(){
 			"use strict";
+			var slideTime = 800;
 
 			$("a").click(function(event){
 				event.preventDefault();
-				$("dd").fadeToggle();
+				$("dd").slideToggle(slideTime);
 			});
 
 			//makes first list item of each list bold...for some reason
@@ -111,7 +112,7 @@
 			});
 
 			$(".park").click(function(){
-				$(this).find("ul").fadeToggle();
+				$(this).find("ul").slideToggle(slideTime);
 			});
 		})();
 	</script>
