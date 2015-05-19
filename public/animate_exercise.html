@@ -54,19 +54,25 @@
             var hasScaledDown = false;
 
             function moveBox(){
+                getRandomColor();
+                
                 if(hasMoved){
                     $("#animate-box").animate({
-                        left: "0"
+                        left: "0",
+                        backgroundColor: randomColor
                     });
 
                     hasMoved = false;
                 } else{
                     $("#animate-box").animate({
-                        left: "100"
+                        left: "100",
+                        backgroundColor: randomColor
                     });
 
                     hasMoved = true;
                 }
+
+                randomColor = "";
             }
 
             function scaleBox(){
