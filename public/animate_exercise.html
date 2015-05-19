@@ -45,10 +45,8 @@
             'use strict';
             var hasMoved = false;
             var hasScaledDown = false;
-            var hasDisappeared = false;
 
-            // todo: Move the box by 100 pixels from the left
-            $("#btn-move").click(function(){
+            function moveBox(){
                 if(hasMoved){
                     $("#animate-box").animate({
                         left: "0"
@@ -62,10 +60,9 @@
 
                     hasMoved = true;
                 }
-            });
+            }
 
-            // todo: Scale the width up by 50%
-            $("#btn-scale-down").click(function(){
+            function scaleBox(){
                 if(hasScaledDown){
                     $("#animate-box").animate({
                         width: "20%" //for some reason, this returns to original size
@@ -79,21 +76,31 @@
 
                     hasScaledDown = true;
                 }
-            });
+            }
 
-            // todo: Use opacity to make the box invisible
-            $("#btn-disappear").click(function(){
+            function fadeOutBox(){
                 $("#animate-box").animate({
                     opacity: "0"
                 });
-            });
+            }
 
-            // todo: Make the box appear again with opacity
-            $("#btn-show").click(function(){
+            function fadeInBox(){
                 $("#animate-box").animate({
                     opacity: "1"
                 })
-            })
+            }
+
+            // todo: Move the box by 100 pixels from the left
+            $("#btn-move").click(moveBox);
+
+            // todo: Scale the width up by 50%
+            $("#btn-scale-down").click(scaleBox);
+
+            // todo: Use opacity to make the box invisible
+            $("#btn-disappear").click(fadeOutBox);
+
+            // todo: Make the box appear again with opacity
+            $("#btn-show").click(fadeInBox);
 
             // todo: Once all is done see if you can chain all the animations
             // to happen with the `Animate all` button.
