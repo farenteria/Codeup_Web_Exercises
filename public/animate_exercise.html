@@ -45,6 +45,7 @@
             'use strict';
             var hasMoved = false;
             var hasScaledDown = false;
+            var hasDisappeared = false;
 
             // todo: Move the box by 100 pixels from the left
             $("#btn-move").click(function(){
@@ -81,6 +82,21 @@
             });
 
             // todo: Use opacity to make the box invisible
+            $("#btn-disappear").click(function(){
+                if(hasDisappeared){
+                    $("#animate-box").animate({
+                        opacity: "100"
+                    });
+
+                    hasDisappeared = false;
+                } else{
+                    $("#animate-box").animate({
+                        opacity: "0"
+                    });
+
+                    hasDisappeared = true;
+                }
+            });
 
             // todo: Make the box appear again with opacity
 
