@@ -10,7 +10,7 @@
 <body>
 	<dl>
 		<dt>Who is the director of the National Park Service?</dt>
-		<dd class="invisible ">Jonathan B. Jarvis</dd>
+		<dd class="invisible">Jonathan B. Jarvis</dd>
 
 		<dt>Is this the sa-</dt>
 		<dd class="invisible">No. That's a comic book character.</dd>
@@ -42,21 +42,24 @@
 
 	<a href="#">Click me!</a>
 
-	<ul><h3>Great Smoky Mountains</h3>
+	<ul>
+		<li><h3>Great Smoky Mountains</h3></li>
 		<li>The largest national park east of the Rocky Mountains!</li>
 		<li>The Great Smoky Mountains is also the most visitd national park in the United States.</li>
 		<li>It is home to 4,000 plant species, 140 tree species, and 1,600 black bears.</li>
-		<li>It features more than 850 miles of hiking trails.</li>
+		<li>This national park's name was inspired by the amount of people that have gotten second-hand cancer after visiting.</li>
 	</ul>
-	<ul><h3>Yosemite National Park</h3>
+	<ul>
+		<li><h3>Yosemite National Park</h3></li>
 		<li>The Ahwaneechee Native Americans called Yosemite home for over 4,000 years.</li>
 		<li>The California Gold Rush brought thousand of people to the area, and resulted in the Mariposa Indian War.</li>
-		<li>President Lincoln named Yosemite Valley and Mariposa Grove as the country's first public reserve.</li>
+		<li>The Mariposa War caused the extinction of over 10 different types of butterflies.</li>
 		<li>Yosemite became a national park in 1890.</li>
 	</ul>
-	<ul><h3>Grand Canyon National Park</h3>
+	<ul>
+		<li><h3>Grand Canyon National Park</h3></li>
 		<li>The chasm took between 3 and 6 million years to form.</li>
-		<li>It includes 70 species of mammals, 250 species of birds, 25 types of reptiles, and 5 species of amphibians.</li>
+		<li>The grandness has been debated in the Supreme court for decades.</li>
 		<li>The Grand Canyon was formed by the Colorado River.</li>
 		<li>Part of the Colorado River is populated by the Hopi, Navajo, Havasupai, Paiute, and Hualapai native tribes.</li>
 	</ul>
@@ -71,13 +74,13 @@
 				$("dd").toggleClass("invisible");
 			});
 
-			//makes first list item of each list bod
-			$("li").each(function(index){
-				if(index % 4 == 0){
-					$(this).css("font-weight", "bold");
-				}
+			//makes first list item of each list bold
+			$("ul").each(function(index){
+				$(this).children().first().css("font-weight", "bold");
+				$(this).children().first().css("color", "red");
 			});
 
+			//when a child list item is clicks, its parent makes like a tree and gets out of there
 			$("li").click(function(){
 				$(this).parent().addClass("invisible");
 			});
