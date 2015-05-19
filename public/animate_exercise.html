@@ -55,7 +55,7 @@
 
             function moveBox(){
                 getRandomColor();
-                
+
                 if(hasMoved){
                     $("#animate-box").animate({
                         left: "0",
@@ -82,7 +82,7 @@
                     $("#animate-box").animate({
                         width: "20%", //for some reason, this returns to original size
                         backgroundColor: randomColor
-                    }, "linear");
+                    });
 
                     hasScaledDown = false;
                 } else{
@@ -97,23 +97,19 @@
                 randomColor = "";
             }
 
-            function fadeOutBox(){
-                $("#animate-box").animate({
-                    opacity: "0"
-                });
+            function explodeOutBox(){
+                $("#animate-box").hide("explode");
             }
 
-            function fadeInBox(){
-                $("#animate-box").animate({
-                    opacity: "1"
-                })
+            function explodeInBox(){
+                $("#animate-box").show("explode");
             }
 
             function doAll(){
                 moveBox();
                 scaleBox();
-                fadeOutBox();
-                fadeInBox();
+                explodeOutBox();
+                explodeInBox();
                 scaleBox();
                 moveBox();
             }
@@ -137,10 +133,10 @@
             $("#btn-scale-down").click(scaleBox);
 
             // todo: Use opacity to make the box invisible
-            $("#btn-disappear").click(fadeOutBox);
+            $("#btn-disappear").click(explodeOutBox);
 
             // todo: Make the box appear again with opacity
-            $("#btn-show").click(fadeInBox);
+            $("#btn-show").click(explodeInBox);
 
             // todo: Once all is done see if you can chain all the animations
             // to happen with the `Animate all` button.
