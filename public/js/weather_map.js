@@ -12,6 +12,7 @@
 		$("#weather-description-1").text(data.weather[0].description);
 		$("#humidity-1").text(data.main.humidity);
 		$("#wind-1").text(data.wind.speed);
+		$("#pressure-1").text(data.main.pressure);
 	}
 
 	// returns a type of weather according to the openweathermap id
