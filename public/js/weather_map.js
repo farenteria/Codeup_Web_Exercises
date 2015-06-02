@@ -10,6 +10,7 @@
 		$("#weather-img-1").attr("src", iconUrl);
 		$("#weather-type-1").text(weatherType);
 		$("#weather-description-1").text(data.weather[0].description);
+		$("#humidity-1").text(data.main.humidity);
 	}
 
 	// returns a type of weather according to the openweathermap id
