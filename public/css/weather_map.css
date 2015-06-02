@@ -4,3 +4,20 @@ html{
 *, *:before, *:after{
 	box-sizing: inherit;
 }
+
+body{
+	background-color: #ABDCFD;
+}
+
+/* Creates and decorates box containing each day */
+.day{
+	border: 1px solid #C6C6C6;
+	height: 100px;
+	width: 33%;
+	float: left;
+	background-color: #F2F2F2;
+}
+
+#day-1{
+	margin-left: 6px;
+}
