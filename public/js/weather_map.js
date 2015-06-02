@@ -5,8 +5,9 @@
 		console.log(data);
 		var iconUrl = "http://openweathermap.org/img/w/" + data.weather[0].icon + ".png";
 		var weatherType = getWeatherType(data.weather[0].id) + ": ";
+		var degreeSymbol = unescape('%B0');
 
-		$("#max-min-1").text(data.main.temp_max + "/" + data.main.temp_min + unescape('%B0'));
+		$("#max-min-1").text(data.main.temp_max + degreeSymbol + "/" + data.main.temp_min + degreeSymbol);
 		$("#weather-img-1").attr("src", iconUrl);
 		$("#weather-type-1").text(weatherType);
 		$("#weather-description-1").text(data.weather[0].description);
