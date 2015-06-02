@@ -9,8 +9,10 @@
 		$("#max-min-1").text(data.main.temp_max + "/" + data.main.temp_min + unescape('%B0'));
 		$("#weather-img-1").attr("src", iconUrl);
 		$("#weather-type-1").text(weatherType);
+		$("#weather-description-1").text(data.weather[0].description);
 	}
 
+	// returns a type of weather according to the openweathermap id
 	function getWeatherType(weatherId){
 		if(weatherId >= 200 && weatherId <= 232){
 			return "Thunderstorm";
