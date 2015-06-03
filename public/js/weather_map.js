@@ -1,11 +1,18 @@
 "use strict";
 (function(){
+	var latitude;
+	var longitude;
+	var units;
+	var days;
+
 	// Will update HTML page with current weather
 	function updateWeather(data){
 		var iconUrl;
 		var weatherType;
 		var day;
 		var degreeSymbol = unescape('%B0'); //javascript version of the degree symbol for temps
+
+		$("#city-name").text(data.city.name);
 
 		//used to go through each day, and update HTML elements for each id
 		for(var i = 0; i < data.list.length; i++){
@@ -45,10 +52,29 @@
 		}
 	}
 
-	$.get("http://api.openweathermap.org/data/2.5/forecast/daily?", {
-		units: "imperial",
-		lat: "29.42", 
-		lon: "-98.49",
-		cnt: "3"
-	}).done(updateWeather);
+	function getWeather(){
+		$("#city-name").text("Loading");
+		$.get("http://api.openweathermap.org/data/2.5/forecast/daily?", {
+			units: units,
+			lat: latitude, 
+			lon: longitude,
+			cnt: days
+		}).done(updateWeather);
+	}
+
+	//initial load in San Antonio
+	latitude = "29.42";
+	longitude = "-98.49";
+	days = "3";
+	units = "imperial";
+
+	getWeather();
+
+	//load new city when user clicks on button
+	$("#button").on("click", function(){
+		latitude = $("#latitude").val();
+		longitude = $("#longitude").val();
+		
+		getWeather();
+	});
 })();
