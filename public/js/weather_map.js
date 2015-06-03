@@ -4,6 +4,9 @@
 	var longitude;
 	var units;
 	var days;
+	var mapOptions;
+	var map;
+	var marker;
 
 	// Will update HTML page with current weather
 	function updateWeather(data){
@@ -62,6 +65,13 @@
 		}).done(updateWeather);
 	}
 
+	function placeMarker(location){
+		marker = new google.maps.Marker({
+			position: location,
+			map: map
+		});
+	}
+
 	//initial load in San Antonio
 	latitude = "29.42";
 	longitude = "-98.49";
@@ -75,6 +85,34 @@
 		latitude = $("#latitude").val();
 		longitude = $("#longitude").val();
 		
+		getWeather();
+	});
+
+	//loading initial map
+	latitude = 37.09024;
+	longitude = -95.712891;
+	mapOptions = {
+		zoom: 4,
+		center: {
+			lat: latitude,
+			lng: longitude
+		}
+	};
+
+	map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+
+	google.maps.event.addListener(map, "click", function(event){
+		//deletes marker if there was one placed previously
+		if(marker != null){
+			marker.setMap(null);
+		}
+
+		placeMarker(event.latLng);
+		zoom: 15;
+
+		//get position of click
+		latitude = event.latLng.lat();
+		longitude = event.latLng.lng();
 		getWeather();
 	});
 })();
