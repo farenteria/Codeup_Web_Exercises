@@ -7,6 +7,9 @@ html{
 
 body{
 	background-color: #ABDCFD;
+	width: 1200px;
+	margin: 0 auto;
+	text-align: center;
 }
 
 /* Creates and decorates box containing each day */
@@ -16,13 +19,9 @@ body{
 	width: 33%;
 	float: left;
 	background-color: #F2F2F2;
-
+	margin-bottom: 10px;
 }
 
 .bold{
 	font-weight: bold;
-}
-
-#day-0{
-	margin-left: 6px;
 }
