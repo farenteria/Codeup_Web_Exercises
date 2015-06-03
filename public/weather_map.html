@@ -7,7 +7,7 @@
 </head>
 <body>
 	<h1>Weather Application</h1>
-	<h2>San Antonio</h2>
+	<h2 id="city-name">San Antonio</h2>
 	<!-- 3 day weather forecast -->
 	<div id="row">
 		<div class="day" id="day-0">
@@ -38,13 +38,16 @@
 
 	<!-- User input to input new coordinates -->
 	<p id="user-inputs">
-		Latitude: <input type="text" name="latitude">
-		Longitude: <input type="text" name="longitude">
-		<button type="button">Get Weather</button>
+		Latitude: <input type="text" name="latitude" id="latitude">
+		Longitude: <input type="text" name="longitude" id="longitude">
+		<button type="button" id="button">Get Weather</button>
 	</p>
+
+	<div id="map-canvas"></div>
 
 	<!-- Hosted jquery library from Google -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD7QaaadMpLB7MLa0JxjrMa5YfLPYHtLVI"></script>
 	<script src="/js/weather_map.js"></script>
 </body>
 </html>
