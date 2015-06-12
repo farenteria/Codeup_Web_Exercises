@@ -1,0 +1,38 @@
+.black{
+	background-color: black;
+}
+
+.blue{
+	background-color: blue;
+}
+
+.green{
+	background-color: green;
+}
+
+.red{
+	background-color: red;
+}
+
+.orange{
+	background-color: orange;
+}
+
+.block{
+	height: 50px;
+	width: 80%;
+	margin: 10px 10px 10px 10px;
+	float: left;
+}
+
+@media screen and (min-width: 550px){
+	.block{
+		width: 30%;
+	}
+}
+
+@media screen and (min-width: 800px){
+	.block{
+		width: 25%;
+	}
+}
