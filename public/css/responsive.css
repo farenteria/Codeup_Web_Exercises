@@ -1,20 +1,20 @@
-.black{
+div:nth-child(1){
 	background-color: black;
 }
 
-.blue{
+div:nth-child(2){
 	background-color: blue;
 }
 
-.green{
+div:nth-child(3){
 	background-color: green;
 }
 
-.red{
+div:nth-child(4){
 	background-color: red;
 }
 
-.orange{
+div:nth-child(5){
 	background-color: orange;
 }
 
