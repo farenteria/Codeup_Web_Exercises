@@ -21,11 +21,14 @@
 
 	echo "Scalar values: ";
 
+	$scalarArray = [];
 	foreach ($things as $item) {
 		if(is_scalar($item)){
-			echo "$item, ";
+			array_push($scalarArray, $item);
 		}
 	}
+
+	echo implode(", ", $scalarArray);
 
 	echo PHP_EOL;
 
@@ -33,10 +36,7 @@
 
 	foreach ($things as $item) {
 		if(is_array($item)){
-			foreach ($item as $value) {
-				echo "$value, ";
-
-			}
+			echo implode(", ", $item);
 		} else{
 			echo $item;
 		}
