@@ -19,6 +19,7 @@
 		echo PHP_EOL;
 	}
 
+	echo PHP_EOL;
 	echo "Scalar values: ";
 
 	$scalarArray = [];
@@ -30,9 +31,9 @@
 
 	echo implode(", ", $scalarArray);
 
-	echo PHP_EOL;
+	echo PHP_EOL . PHP_EOL;
 
-	echo "Printing out everything" . PHP_EOL . PHP_EOL;
+	echo "Printing out everything" . PHP_EOL;
 
 	foreach ($things as $item) {
 		if(is_array($item)){
