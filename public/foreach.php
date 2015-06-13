@@ -16,8 +16,29 @@
 			echo "String";
 		}
 
+		echo PHP_EOL;
+	}
+
+	echo "Scalar values: ";
+
+	foreach ($things as $item) {
 		if(is_scalar($item)){
-			echo " $item";
+			echo "$item, ";
+		}
+	}
+
+	echo PHP_EOL;
+
+	echo "Printing out everything" . PHP_EOL . PHP_EOL;
+
+	foreach ($things as $item) {
+		if(is_array($item)){
+			foreach ($item as $value) {
+				echo "$value, ";
+
+			}
+		} else{
+			echo $item;
 		}
 
 		echo PHP_EOL;
