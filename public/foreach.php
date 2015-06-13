@@ -16,6 +16,10 @@
 			echo "String";
 		}
 
+		if(is_scalar($item)){
+			echo " $item";
+		}
+
 		echo PHP_EOL;
 	}
 ?>
