@@ -21,6 +21,8 @@
 <html>
 <head>
 	<title>Your Server Name</title>
+	<link rel="stylesheet" href="/css/normalize.css">
+	<link rel="stylesheet" href="/css/server-name-generator.css">
 </head>
 <body>
 	<h1>Your new server name is:</h1>
