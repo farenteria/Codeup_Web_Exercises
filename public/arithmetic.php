@@ -20,8 +20,13 @@ function divide($a, $b)
     echo $a / $b . PHP_EOL;
 }
 
+function modulus($a, $b){
+	echo $a % $b . PHP_EOL;
+}
+
 // Add code to test your functions here
 add(5, 5);
 subtract(5, 5);
 multiply(5, 5);
 divide(5, 5);
+modulus(5, 5);
