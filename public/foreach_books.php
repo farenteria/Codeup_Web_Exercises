@@ -23,7 +23,10 @@
 	);
 
 	foreach ($books as $book => $value) {
-		echo "$book" . PHP_EOL;
-		echo "Published in {$value['published']} by {$value['author']} with {$value['pages']} pages" . PHP_EOL . PHP_EOL;
+		if($value["published"] > 1950){
+			echo "$book" . PHP_EOL;
+			echo "Published in {$value['published']} by {$value['author']} with {$value['pages']} pages";
+			echo PHP_EOL . PHP_EOL;
+		}
 	}
 ?>
