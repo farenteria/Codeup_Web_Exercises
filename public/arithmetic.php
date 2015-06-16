@@ -2,22 +2,26 @@
 
 function add($a, $b)
 {
-    echo $a + $b;
+    echo $a + $b . PHP_EOL;
 }
 
 function subtract($a, $b)
 {
-    // Add code here
+    echo $a - $b . PHP_EOL;
 }
 
 function multiply($a, $b)
 {
-    // Add code here
+    echo $a * $b . PHP_EOL;
 }
 
 function divide($a, $b)
 {
-    // Add code here
+    echo $a / $b . PHP_EOL;
 }
 
 // Add code to test your functions here
+add(5, 5);
+subtract(5, 5);
+multiply(5, 5);
+divide(5, 5);
