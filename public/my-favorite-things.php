@@ -24,6 +24,12 @@
 		<tr>
 			<td><?php echo $favorites[4]; ?></td>
 		</tr> -->
+		<?php
+			foreach($favorites as $favorite)
+			{
+			    echo "<tr><td>".$favorite."</td></tr>";
+			}
+		?>
 	</table>
 </body>
 </html>
