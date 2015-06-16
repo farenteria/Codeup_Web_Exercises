@@ -9,25 +9,10 @@
 <body>
 	<h1>These are a few of my favorite things</h1>
 	<table>
-<!-- 		<tr>
-			<td><?php echo $favorites[0]; ?></td>
-		</tr>
-		<tr>
-			<td><?php echo $favorites[1]; ?></td>
-		</tr>
-		<tr>
-			<td><?php echo $favorites[2]; ?></td>
-		</tr>
-		<tr>
-			<td><?php echo $favorites[3]; ?></td>
-		</tr>
-		<tr>
-			<td><?php echo $favorites[4]; ?></td>
-		</tr> -->
 		<?php
 			foreach($favorites as $favorite)
 			{
-			    echo "<tr><td>".$favorite."</td></tr>";
+				echo "<tr><td> $favorite </td></tr>";
 			}
 		?>
 	</table>
