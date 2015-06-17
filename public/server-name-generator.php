@@ -26,7 +26,7 @@
 </head>
 <body>
 	<h1>Your new server name is:</h1>
-	<p><?php echo "$adj $noun" ?></p>
+	<p><?= "$adj $noun" ?></p>
 	<form method="POST" action="/server-name-generator.php">
 		<input type="submit" name="submit" value="New Name">
 	</form>

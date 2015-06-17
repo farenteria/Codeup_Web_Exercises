@@ -10,10 +10,9 @@
 	<h1>These are a few of my favorite things</h1>
 	<table>
 		<?php
-			foreach($favorites as $favorite)
-			{
+			foreach($favorites as $favorite):
 				echo "<tr><td> $favorite </td></tr>";
-			}
+			endforeach;
 		?>
 	</table>
 </body>
