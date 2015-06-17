@@ -25,10 +25,13 @@
 	<link rel="stylesheet" href="/css/server-name-generator.css">
 </head>
 <body>
-	<h1>Your new server name is:</h1>
+	<header class="round-border">
+		<h1>Your new server name is:</h1>
+	</header>
+
 	<p><?= "$adj $noun" ?></p>
 	<form method="POST" action="/server-name-generator.php">
-		<input type="submit" name="submit" value="New Name">
+		<input type="submit" name="submit" value="New Name" class="round-border">
 	</form>
 </body>
 </html>

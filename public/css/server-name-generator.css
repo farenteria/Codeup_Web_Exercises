@@ -1,0 +1,22 @@
+body{
+	text-align: center;
+	width: 1200px;
+	background-color: #e5cc67;
+}
+
+header{
+	height: 80px;
+	border: 1px solid #0ad636;
+	background-color: #07bc31;
+	width: 40%;
+	margin: 0 auto;
+}
+
+/* server name */
+p{
+	margin-bottom: 10px;
+}
+
+.round-border{
+	border-radius: 25px;
+}
