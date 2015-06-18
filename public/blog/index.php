@@ -6,12 +6,6 @@
 		$post[$i]["author"] = $author;	
 		$post[$i]["content"] = $content;		
 	}
-
-	//the header of our page
-	include "header.php";
-
-	//each post in our blog
-	include "post.php";
 ?>
 
 <!DOCTYPE html>
@@ -20,6 +14,8 @@
 	<title>The Blog</title>
 </head>
 <body>
+	<h1><?php include "header.php" ?></h1>
 
+	<main><?php include "post.php" ?></main>
 </body>
 </html>
