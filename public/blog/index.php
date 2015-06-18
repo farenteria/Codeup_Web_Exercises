@@ -1,10 +1,12 @@
 <?php
 	include "data.php";
 
-	foreach ($post as $article){
-		$article["author"] = $author;
-		$article["content"] = $content;
+	for($i = 0; $i < count($post); $i++){
+		$post[$i]["author"] = $author;	
+		$post[$i]["content"] = $content;		
 	}
+
+	include "post.php";
 ?>
 
 <!DOCTYPE html>
