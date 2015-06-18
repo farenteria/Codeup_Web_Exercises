@@ -1,8 +1,10 @@
-<article>
-	<header>
-		<h1><?= $post["title"]; ?></h1>
-		by <?= $post["author"]; ?> &mdash; <?= $post["date"]; ?>
-	</header>
+<?php foreach ($post as $article): ?>
+	<article>
+		<header>
+			<h1><?= $article["title"]; ?></h1>
+			by <?= $article["author"]; ?> &mdash; <?= $article["date"]; ?>
+		</header>
 
-	<p><?= $post["content"] ?></p>
-</article>
+		<p><?= $article["content"] ?></p>
+	</article>
+<?php endforeach ?>
