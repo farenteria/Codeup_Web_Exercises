@@ -23,6 +23,10 @@
 		<li ng-repeat="letter in ['a', 'b', 'c', 'd', 'e', 'f']">{{ letter | lowercase }}</li>
 	</ul>
 
+	<div ng-repeat="image in ['codeup-ribbon', 'codeup-arrow', 'pizza_icon']">
+		<img ng-src="/img/{{ image }}.png" alt="Codeup, boys">
+	</div>
+
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.1/angular.min.js"></script>
 	<script src="/js/templateTest.js"></script>
 </body>
