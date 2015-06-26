@@ -28,12 +28,10 @@
 			<input type="text" id="github" ng-model="user.github">
 		</div>
 
-		<div class="icon">
-			<select>
-				<option>1</option>
-				<option>1</option>
-				<option>1</option>
-			</select>
+		<div class="icons">
+			<label ng-repeat="icon in ['codeup-arrow', 'pizza_icon']"><img src="/img/{{ icon }}.png">
+				<input type="radio" name="icons" ng-model="user.icon" value="icon">
+			</label>
 		</div>
 	</form>
 
