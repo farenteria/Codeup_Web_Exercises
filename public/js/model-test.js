@@ -1,3 +1,5 @@
 (function(){
-	var app = angular.model("model-test");
+	"use strict";
+
+	var app = angular.module("model-test", []);
 })();
