@@ -2,10 +2,15 @@
 <html ng-app="testModule">
 <head>
 	<title>Template Test</title>
+	<style>
+		[ng-cloak]{
+			display: none !important;
+		}
+	</style>
 </head>
-<body>
+<body ng-cloak>
 	<ul>
-		<li ng-repeat="num in [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]">{{ num }}</li>
+		<li ng-repeat="num in [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]" ng-if=" num % 3 != 0">{{ num }}</li>
 	</ul>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.1/angular.min.js"></script>
 	<script src="/js/templateTest.js"></script>
